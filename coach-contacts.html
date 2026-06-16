@@ -893,7 +893,7 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
     var clientSecret = null;
 
     // Request PaymentIntent from local server
-    fetch('http://localhost:4242/create-payment-intent', {
+    fetch('https://tnl-payments-production.up.railway.app/create-payment-intent', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
