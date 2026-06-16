@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — The Next Level</title>
+<meta name="description" content="Advice and insights on soccer scholarships, NCAA recruiting, and getting noticed by US college coaches.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;--bg-1:#0f0f0f;--bg-2:#161616;--bg-3:#1e1e1e;
+  --border:rgba(255,255,255,0.07);--border-hover:rgba(255,255,255,0.14);
+  --white:#ffffff;--off-white:#e8e2d9;--text:#ffffff;
+  --text-2:rgba(255,255,255,0.55);--text-3:rgba(255,255,255,0.3);
+  --gold:#c9a84c;--gold-light:#e8c97a;--green:#22c55e;
+  --radius:8px;--radius-lg:16px;--ease:cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--text);background:var(--bg);overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 28px}
+.serif{font-family:'DM Serif Display',serif}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:20px}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--green)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;padding:12px 22px;border-radius:var(--radius);text-decoration:none;cursor:pointer;border:none;transition:all .25s var(--ease);letter-spacing:0.01em;white-space:nowrap}
+.btn--white{background:var(--white);color:#000;font-weight:600}
+.btn--white:hover{background:var(--off-white);transform:translateY(-1px)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1160px;margin:0 auto;padding:0 28px}
+.nav__logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav__logo-icon{width:32px;height:32px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04)}
+.nav__logo-icon svg{width:16px;height:16px}
+.nav__wordmark{font-family:'DM Serif Display',serif;font-size:17px;color:var(--white);letter-spacing:0.01em}
+.nav__wordmark em{font-style:italic;color:var(--gold)}
+.nav__links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav__links a{font-size:13px;color:var(--text-2);text-decoration:none;transition:color .2s}
+.nav__links a:hover{color:var(--white)}
+.nav__links a.btn--white,.nav__links a.btn--white:hover{color:#000}
+.nav__ham{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:4px}
+.nav__ham span{display:block;width:20px;height:1.5px;background:var(--text-2);transition:.25s}
+.nav__mob{display:none;position:fixed;inset:64px 0 0;background:var(--bg);padding:24px 28px;flex-direction:column;gap:0;z-index:99;border-top:1px solid var(--border)}
+.nav__mob.open{display:flex}
+.nav__mob a{display:block;padding:16px 0;font-size:15px;color:var(--text-2);text-decoration:none;border-bottom:1px solid var(--border);transition:color .2s}
+.nav__mob a:hover{color:var(--white)}
+.nav__mob .btn{margin-top:20px;width:100%;justify-content:center;font-size:14px}
+@media(max-width:768px){.nav__links{display:none}.nav__ham{display:flex}}
+
+/* PAGE HERO */
+.pagehero{padding:160px 0 60px;border-bottom:1px solid var(--border)}
+.pagehero h1{font-family:'DM Serif Display',serif;font-size:clamp(34px,6vw,52px);line-height:1.1;margin-bottom:16px}
+.pagehero h1 em{font-style:italic;color:var(--gold)}
+.pagehero p{color:var(--text-2);font-size:15px;max-width:560px}
+
+/* BLOG GRID */
+.blog{padding:64px 0 120px}
+.blog__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.blog__card{background:var(--bg);padding:32px 28px;transition:background .3s var(--ease);text-decoration:none;display:block;color:inherit}
+.blog__card:hover{background:var(--bg-2)}
+.blog__card-tag{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.blog__card-title{font-family:'DM Serif Display',serif;font-size:21px;line-height:1.3;margin-bottom:12px;color:var(--white)}
+.blog__card-excerpt{font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:18px}
+.blog__card-meta{font-size:11px;color:var(--text-3);letter-spacing:0.04em}
+@media(max-width:900px){.blog__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.blog__grid{grid-template-columns:1fr}}
+
+/* FOOTER */
+.footer{padding:48px 0;border-top:1px solid var(--border)}
+.footer__inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer__copy{font-size:12px;color:var(--text-3)}
+.footer__back{font-size:13px;color:var(--text-2);text-decoration:none;transition:color .2s}
+.footer__back:hover{color:var(--white)}
+</style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="the-next-level.html" class="nav__logo" aria-label="The Next Level — Home">
+      <div class="nav__logo-icon" aria-hidden="true">
+        <svg viewBox="0 0 16 16" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><polygon points="8,1 11,6.5 15,7.5 11.5,11 12.5,15.5 8,13 3.5,15.5 4.5,11 1,7.5 5,6.5"/></svg>
+      </div>
+      <span class="nav__wordmark">The <em>Next</em> Level</span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="coach-contacts.html">Coach Contacts</a></li>
+      <li><a href="the-next-level.html#process">Process</a></li>
+      <li><a href="the-next-level.html#pricing">Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="the-next-level.html#apply" class="btn btn--white" style="padding:9px 18px;font-size:13px">Apply Now</a></li>
+    </ul>
+    <button class="nav__ham" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="navmob">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mob" id="navmob" role="menu">
+    <a href="the-next-level.html#process" role="menuitem">Process</a>
+    <a href="the-next-level.html#pricing" role="menuitem">Pricing</a>
+    <a href="faq.html" role="menuitem">FAQ</a>
+    <a href="the-next-level.html#apply" class="btn btn--white" role="menuitem">Apply Now</a>
+  </div>
+</nav>
+
+<section class="pagehero">
+  <div class="container">
+    <span class="eyebrow">Resources</span>
+    <h1>The <em>playbook.</em></h1>
+    <p>Practical advice on recruiting, eligibility, and making the move to US college soccer.</p>
+  </div>
+</section>
+
+<section class="blog">
+  <div class="container">
+    <div class="blog__grid">
+
+      <a href="#" class="blog__card">
+        <div class="blog__card-tag">Recruiting</div>
+        <div class="blog__card-title">What college coaches actually look for in a highlight reel</div>
+        <div class="blog__card-excerpt">Most reels get skipped in the first 30 seconds. Here's the structure that keeps coaches watching — and the common mistakes that cost athletes offers.</div>
+              </a>
+
+      <a href="#" class="blog__card">
+        <div class="blog__card-tag">Eligibility</div>
+        <div class="blog__card-title">NCAA vs NAIA vs NJCAA: which division actually fits you</div>
+        <div class="blog__card-excerpt">Division isn't just about talent level — scholarship rules, roster sizes, and academic requirements vary enormously. A breakdown of where you might actually thrive.</div>
+              </a>
+
+      <a href="#" class="blog__card">
+        <div class="blog__card-tag">Timeline</div>
+        <div class="blog__card-title">When to start the recruiting process (it's earlier than you think)</div>
+        <div class="blog__card-excerpt">Coaches build their rosters 12–18 months out. If you're waiting until senior year to reach out, you're already behind — here's a realistic timeline by age.</div>
+              </a>
+
+      <a href="#" class="blog__card">
+        <div class="blog__card-tag">Academics</div>
+        <div class="blog__card-title">Why your grades matter as much as your footwork</div>
+        <div class="blog__card-excerpt">Athletic ability gets you noticed. Academic eligibility gets you signed. How GPA and test scores directly affect the scholarship money on the table.</div>
+              </a>
+
+      <a href="#" class="blog__card">
+        <div class="blog__card-tag">International</div>
+        <div class="blog__card-title">A realistic guide for international athletes chasing a US scholarship</div>
+        <div class="blog__card-excerpt">From amateurism status to visa basics — what international players need to know before they start reaching out to coaches.</div>
+              </a>
+
+      <a href="#" class="blog__card">
+        <div class="blog__card-tag">Mindset</div>
+        <div class="blog__card-title">Handling rejection: what to do when a coach says no</div>
+        <div class="blog__card-excerpt">Most athletes hear "no" more than "yes" during recruiting. How to keep your pipeline moving and not take silence personally.</div>
+              </a>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <span class="footer__copy">© 2026 The Next Level. All rights reserved.</span>
+      <a href="the-next-level.html" class="footer__back">← Back to main site</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ham = document.getElementById('ham');
+  var mob = document.getElementById('navmob');
+  if (ham) {
+    ham.addEventListener('click', function(){
+      var open = mob.classList.toggle('open');
+      ham.setAttribute('aria-expanded', open);
+    });
+  }
+})();
+</script>
+</body>
+</html>
