@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coach Contacts — The Next Level</title>
-<script src="https://js.stripe.com/v3/"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -95,6 +94,55 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
   font-size:12px;color:var(--text-2);
 }
 .badge__dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+
+/* SAMPLE PREVIEW */
+.sample{padding:80px 0;border-bottom:1px solid var(--border)}
+.sample__eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--text-3);margin-bottom:16px;
+}
+.sample__h{
+  font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,44px);
+  color:var(--white);margin-bottom:8px;line-height:1.1;
+}
+.sample__h em{font-style:italic;color:var(--gold)}
+.sample__sub{font-size:15px;color:var(--text-2);margin-bottom:40px;max-width:520px}
+.sample__table-wrap{
+  overflow-x:auto;border-radius:var(--radius-lg);
+  border:1px solid var(--border);
+}
+.sample__table{
+  width:100%;border-collapse:collapse;font-size:13px;min-width:600px;
+}
+.sample__table thead tr{
+  background:var(--bg-2);
+}
+.sample__table th{
+  padding:14px 20px;text-align:left;
+  font-size:11px;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--text-3);
+  border-bottom:1px solid var(--border);white-space:nowrap;
+}
+.sample__table tbody tr{
+  border-bottom:1px solid var(--border);
+  transition:background .15s;
+}
+.sample__table tbody tr:last-child{border-bottom:none}
+.sample__table tbody tr:hover{background:var(--bg-2)}
+.sample__table td{padding:14px 20px;color:var(--text-2);vertical-align:middle}
+.sample__table td:first-child{color:var(--white);font-weight:500}
+.sample__div-pill{
+  display:inline-flex;align-items:center;
+  background:var(--bg-3);border:1px solid var(--border);
+  border-radius:100px;padding:3px 10px;
+  font-size:11px;font-weight:600;letter-spacing:0.05em;color:var(--text-2);
+}
+.sample__email{color:var(--gold);font-family:monospace;font-size:12px}
+.sample__note{
+  margin-top:16px;font-size:12px;color:var(--text-3);
+  display:flex;align-items:center;gap:6px;
+}
+.sample__note::before{content:'🔒';font-size:11px}
 
 /* DIVISIONS */
 .divisions{padding:80px 0}
@@ -350,10 +398,12 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 .pm-input::placeholder{color:var(--text-3)}
 .pm-input:focus{border-color:rgba(201,168,76,0.5);box-shadow:0 0 0 3px rgba(201,168,76,0.08)}
 
-.pm-card-element{
-  padding:13px 14px;
-  background:var(--bg-2);border:1px solid var(--border);
-  border-radius:var(--radius);transition:border-color .2s,box-shadow .2s;
+.pm-checkout-info{
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  border-radius:var(--radius);padding:16px 18px;margin-bottom:24px;
+}
+.pm-checkout-info p{
+  color:rgba(255,255,255,0.6);font-size:13px;line-height:1.6;margin:0;
 }
 .pm-card-element.focused{border-color:rgba(201,168,76,0.5);box-shadow:0 0 0 3px rgba(201,168,76,0.08)}
 
@@ -491,6 +541,68 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
         <span class="badge"><span class="badge__dot" aria-hidden="true"></span>Instant download</span>
         <span class="badge"><span class="badge__dot" aria-hidden="true"></span>CSV &amp; Excel format</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE PREVIEW -->
+<section class="sample">
+  <div class="container">
+    <div class="reveal">
+      <div class="sample__eyebrow">What you get</div>
+      <h2 class="sample__h">Sample <em>Data Preview</em></h2>
+      <p class="sample__sub">Here's a snapshot of what your list looks like. Every purchase includes coach name, email, university, division, and role.</p>
+      <div class="sample__table-wrap">
+        <table class="sample__table">
+          <thead>
+            <tr>
+              <th>University</th>
+              <th>Division</th>
+              <th>Coach Name</th>
+              <th>Role</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>University of Michigan</td>
+              <td><span class="sample__div-pill">NCAA D1</span></td>
+              <td>Steve Cook</td>
+              <td>Head Coach</td>
+              <td><span class="sample__email">s.cook@umich.edu</span></td>
+            </tr>
+            <tr>
+              <td>UC Santa Barbara</td>
+              <td><span class="sample__div-pill">NCAA D1</span></td>
+              <td>Paul D. Hoover</td>
+              <td>Head Coach</td>
+              <td><span class="sample__email">p.hoover@ucsb.edu</span></td>
+            </tr>
+            <tr>
+              <td>University of Denver</td>
+              <td><span class="sample__div-pill">NCAA D2</span></td>
+              <td>Jamie Ellis</td>
+              <td>Assistant Coach</td>
+              <td><span class="sample__email">j.ellis@du.edu</span></td>
+            </tr>
+            <tr>
+              <td>Gordon State College</td>
+              <td><span class="sample__div-pill">NAIA</span></td>
+              <td>Eric Sexton</td>
+              <td>Head Coach</td>
+              <td><span class="sample__email">e.sexton@gordonstate.edu</span></td>
+            </tr>
+            <tr>
+              <td>Phoenix College</td>
+              <td><span class="sample__div-pill">NJCAA</span></td>
+              <td>Chris McGowan</td>
+              <td>Head Coach</td>
+              <td><span class="sample__email">c.mcgowan@phoenixcollege.edu</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="sample__note">Emails blurred in preview — full addresses included with every purchase.</p>
     </div>
   </div>
 </section>
@@ -768,25 +880,15 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
       <div class="pm-form__title">Complete Payment</div>
       <div class="pm-form__sub">Secured by Stripe · 256-bit encryption</div>
 
-      <form id="pmForm">
-        <div class="pm-field">
-          <label class="pm-label" for="pmEmail">Email address</label>
-          <input class="pm-input" type="email" id="pmEmail" placeholder="you@example.com" required autocomplete="email">
-        </div>
-        <div class="pm-field">
-          <label class="pm-label" for="pmName">Name on card</label>
-          <input class="pm-input" type="text" id="pmName" placeholder="John Smith" required autocomplete="name">
-        </div>
-        <div class="pm-field">
-          <label class="pm-label">Card details</label>
-          <div class="pm-card-element" id="cardElement"></div>
-        </div>
-        <div class="pm-error" id="pmError"></div>
-        <button type="submit" class="pm-pay-btn" id="pmPayBtn">
-          <span id="pmBtnText">Pay <span id="pmBtnAmount">£99</span></span>
-          <div class="spinner" id="pmSpinner"></div>
-        </button>
-      </form>
+      <div class="pm-checkout-info">
+        <p>You'll be taken to Stripe's secure checkout page to complete your payment. Your card details are entered directly on Stripe — we never see them.</p>
+      </div>
+
+      <div class="pm-error" id="pmError"></div>
+      <button class="pm-pay-btn" id="pmPayBtn" onclick="doCheckout()">
+        <span id="pmBtnText">Pay <span id="pmBtnAmount">£99</span> securely →</span>
+        <div class="spinner" id="pmSpinner"></div>
+      </button>
 
       <div class="pm-secure">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -822,25 +924,22 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
   },{threshold:0.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 
-  var stripe = Stripe('pk_test_51TijoxP9OaKysy99UobGLWSK6Dt0pSd414T8cuKsYFxuL4s9L6xU9ZX2bupUdyyrz0XgWCixFTdxxeDuXY6ovjlJ004mpL5EKJ');
-  var paymentElement = null;
-  var stripeElements = null;
-
   var products = {
-    'NCAA Division I':    {price:'£99',  pence:9900,  desc:'~1,400+ verified coach contacts · 350 universities', includes:['1,400+ coach emails','NCAA D1 only','CSV & Excel format','Instant download','90-day free updates']},
-    'NCAA Division II':   {price:'£79',  pence:7900,  desc:'~1,100+ verified coach contacts · 290 universities', includes:['1,100+ coach emails','NCAA D2 only','CSV & Excel format','Instant download','90-day free updates']},
-    'NCAA Division III':  {price:'£49',  pence:4900,  desc:'~1,600+ verified coach contacts · 440 universities', includes:['1,600+ coach emails','NCAA D3 only','CSV & Excel format','Instant download','90-day free updates']},
-    'NAIA Division I':    {price:'£79',  pence:7900,  desc:'~600+ verified coach contacts · 180 universities',   includes:['600+ coach emails','NAIA D1 only','CSV & Excel format','Instant download','90-day free updates']},
-    'NAIA Division II':   {price:'£59',  pence:5900,  desc:'~400+ verified coach contacts · 120 universities',   includes:['400+ coach emails','NAIA D2 only','CSV & Excel format','Instant download','90-day free updates']},
-    'NJCAA Junior College':{price:'£49', pence:4900,  desc:'~500+ verified coach contacts · 150 colleges',       includes:['500+ coach emails','NJCAA only','CSV & Excel format','Instant download','90-day free updates']},
-    'Complete Bundle':    {price:'£299', pence:29900, desc:'All divisions · 5,600+ verified coach contacts',     includes:['5,600+ coach emails','All 6 divisions','CSV & Excel format','Instant download','90-day free updates','Priority support']}
+    'NCAA Division I':    {price:'£99',  pence:9900,  name:'NCAA Division I Coach Contacts',     desc:'~1,400+ verified coach contacts · 350 universities', includes:['1,400+ coach emails','NCAA D1 only','CSV & Excel format','Instant download','90-day free updates']},
+    'NCAA Division II':   {price:'£79',  pence:7900,  name:'NCAA Division II Coach Contacts',    desc:'~1,100+ verified coach contacts · 290 universities', includes:['1,100+ coach emails','NCAA D2 only','CSV & Excel format','Instant download','90-day free updates']},
+    'NCAA Division III':  {price:'£49',  pence:4900,  name:'NCAA Division III Coach Contacts',   desc:'~1,600+ verified coach contacts · 440 universities', includes:['1,600+ coach emails','NCAA D3 only','CSV & Excel format','Instant download','90-day free updates']},
+    'NAIA Division I':    {price:'£79',  pence:7900,  name:'NAIA Division I Coach Contacts',     desc:'~600+ verified coach contacts · 180 universities',   includes:['600+ coach emails','NAIA D1 only','CSV & Excel format','Instant download','90-day free updates']},
+    'NAIA Division II':   {price:'£59',  pence:5900,  name:'NAIA Division II Coach Contacts',    desc:'~400+ verified coach contacts · 120 universities',   includes:['400+ coach emails','NAIA D2 only','CSV & Excel format','Instant download','90-day free updates']},
+    'NJCAA Junior College':{price:'£49', pence:4900,  name:'NJCAA Junior College Coach Contacts',desc:'~500+ verified coach contacts · 150 colleges',       includes:['500+ coach emails','NJCAA only','CSV & Excel format','Instant download','90-day free updates']},
+    'Complete Bundle':    {price:'£299', pence:29900, name:'Complete Bundle — All Divisions',    desc:'All divisions · 5,600+ verified coach contacts',     includes:['5,600+ coach emails','All 6 divisions','CSV & Excel format','Instant download','90-day free updates','Priority support']}
   };
 
   var currentProduct = null;
 
   window.handlePurchase = function(label){
     var key = label.replace(/ — £[\d,]+/,'');
-    currentProduct = products[key] || {price:'£0', pence:0, desc:'Coach contact database', includes:['Verified emails','CSV & Excel format','Instant download']};
+    currentProduct = products[key];
+    if(!currentProduct) return;
     currentProduct._key = key;
 
     document.getElementById('pmItemName').textContent = key;
@@ -863,70 +962,43 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
     document.getElementById('pmBtnText').style.display = '';
     document.getElementById('pmSpinner').classList.remove('show');
 
-    // Mount Stripe Payment Element
-    document.getElementById('cardElement').innerHTML = '';
-    if(paymentElement){ paymentElement.destroy(); paymentElement = null; }
+    document.getElementById('pmOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
 
-    var appearance = {
-      theme: 'night',
-      variables:{
-        colorPrimary:'#c9a84c',
-        colorBackground:'#161616',
-        colorText:'#ffffff',
-        colorDanger:'#f87171',
-        fontFamily:'Inter, sans-serif',
-        spacingUnit:'4px',
-        borderRadius:'8px',
-        colorTextPlaceholder:'rgba(255,255,255,0.3)'
-      },
-      rules:{
-        '.Input':{border:'1px solid rgba(255,255,255,0.1)',padding:'12px 14px'},
-        '.Input:focus':{border:'1px solid rgba(201,168,76,0.5)',boxShadow:'0 0 0 3px rgba(201,168,76,0.1)'},
-        '.Label':{color:'rgba(255,255,255,0.55)',fontSize:'12px',fontWeight:'500',letterSpacing:'0.02em'},
-        '.Tab':{border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.55)'},
-        '.Tab:hover':{color:'#ffffff'},
-        '.Tab--selected':{border:'1px solid rgba(201,168,76,0.4)',color:'#c9a84c'}
-      }
-    };
+  window.doCheckout = function(){
+    if(!currentProduct) return;
+    var btn     = document.getElementById('pmPayBtn');
+    var btnText = document.getElementById('pmBtnText');
+    var spinner = document.getElementById('pmSpinner');
+    var errEl   = document.getElementById('pmError');
 
-    var email = document.getElementById('pmEmail').value.trim();
-    var clientSecret = null;
+    btn.disabled = true;
+    btnText.style.display = 'none';
+    spinner.classList.add('show');
+    errEl.classList.remove('show');
 
-    // Request PaymentIntent from local server
-    fetch('https://tnl-payments-production.up.railway.app/create-payment-intent', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
+    fetch('https://tnl-payments-production.up.railway.app/create-checkout-session', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
+        productKey: currentProduct._key,
         amountPence: currentProduct.pence,
-        description: key + ' — Coach Contact Database',
-        email: email || undefined
+        productName: currentProduct.name
       })
     })
     .then(function(r){ return r.json(); })
     .then(function(data){
       if(data.error){ throw new Error(data.error); }
-      clientSecret = data.clientSecret;
-      stripeElements = stripe.elements({ appearance: appearance, clientSecret: clientSecret });
-      paymentElement = stripeElements.create('payment', { layout: 'tabs' });
-      paymentElement.mount('#cardElement');
+      window.location.href = data.url;
     })
     .catch(function(err){
-      // Fallback: show card element without PaymentIntent (UI demo)
-      stripeElements = stripe.elements({ appearance: appearance });
-      paymentElement = stripeElements.create('card', {
-        style:{
-          base:{color:'#fff',fontFamily:'Inter,sans-serif',fontSize:'14px','::placeholder':{color:'rgba(255,255,255,0.3)'},iconColor:'rgba(255,255,255,0.4)'},
-          invalid:{color:'#f87171'}
-        }
-      });
-      paymentElement.mount('#cardElement');
-      document.getElementById('pmError').textContent = 'ℹ️ Server not running — start tnl-server.js to process real payments. Card UI shown for preview.';
-      document.getElementById('pmError').classList.add('show');
+      errEl.textContent = 'Something went wrong: ' + err.message + '. Please try again.';
+      errEl.classList.add('show');
+      btn.disabled = false;
+      btnText.style.display = '';
+      spinner.classList.remove('show');
     });
-
-    document.getElementById('pmOverlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    setTimeout(function(){ document.getElementById('pmEmail').focus(); }, 350);
   };
 
   window.closePaymentModal = function(){
@@ -941,64 +1013,15 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
     if(e.key === 'Escape') closePaymentModal();
   });
 
-  document.getElementById('pmForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    var email   = document.getElementById('pmEmail').value.trim();
-    var name    = document.getElementById('pmName').value.trim();
-    var errEl   = document.getElementById('pmError');
-    var btn     = document.getElementById('pmPayBtn');
-    var spinner = document.getElementById('pmSpinner');
-    var btnText = document.getElementById('pmBtnText');
-
-    if(!email || !name){
-      errEl.textContent = 'Please fill in your email and name.';
-      errEl.classList.add('show');
-      return;
-    }
-
-    errEl.classList.remove('show');
-    btn.disabled = true;
-    btnText.style.display = 'none';
-    spinner.classList.add('show');
-
-    if(!stripeElements){ return; }
-
-    // Confirm the payment with Stripe
-    stripe.confirmPayment({
-      elements: stripeElements,
-      confirmParams:{
-        return_url: window.location.origin + '/coach-contacts.html?success=1',
-        payment_method_data:{ billing_details:{ name: name, email: email } }
-      },
-      redirect: 'if_required'
-    }).then(function(result){
-      if(result.error){
-        errEl.textContent = result.error.message;
-        errEl.classList.add('show');
-        btn.disabled = false;
-        btnText.style.display = '';
-        spinner.classList.remove('show');
-      } else if(result.paymentIntent && result.paymentIntent.status === 'succeeded'){
-        var ref = 'TNL-' + result.paymentIntent.id.substr(-8).toUpperCase();
-        document.getElementById('pmRef').textContent = 'Order ref: ' + ref;
-        document.getElementById('pmSummary').style.display = 'none';
-        document.getElementById('pmFormPanel').style.display = 'none';
-        document.getElementById('pmSuccess').classList.add('show');
-      }
-    });
-  });
-
-  // Handle return from Stripe redirect
+  // Handle return from Stripe Checkout
   var params = new URLSearchParams(window.location.search);
-  if(params.get('success') === '1'){
-    var pi = params.get('payment_intent');
-    if(pi){
-      document.getElementById('pmRef').textContent = 'Order ref: TNL-' + pi.substr(-8).toUpperCase();
-      document.getElementById('pmSummary').style.display = 'none';
-      document.getElementById('pmFormPanel').style.display = 'none';
-      document.getElementById('pmSuccess').classList.add('show');
-      document.getElementById('pmOverlay').classList.add('open');
-    }
+  if(params.get('payment') === 'success'){
+    document.getElementById('pmSummary').style.display = 'none';
+    document.getElementById('pmFormPanel').style.display = 'none';
+    document.getElementById('pmSuccess').classList.add('show');
+    document.getElementById('pmOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    history.replaceState({}, '', window.location.pathname);
   }
 })();
 </script>
