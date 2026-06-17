@@ -11,7 +11,7 @@ exports.handler = async (event) => {
     const { firstName, lastName, email, age, position, country, message } = JSON.parse(event.body);
 
     await resend.emails.send({
-      from: 'TNL Website <onboarding@resend.dev>',
+      from: 'TNL Website <noreply@tnlrecruitment.com>',
       to: 'tnlrecruitment@outlook.com',
       replyTo: email,
       subject: `New Application — ${firstName} ${lastName}`,
