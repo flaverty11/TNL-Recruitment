@@ -1267,7 +1267,7 @@ body{
       message: document.getElementById('msg').value.trim()
     };
 
-    fetch('http://localhost:4242/submit-application', {
+    fetch('/.netlify/functions/submit-application', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
