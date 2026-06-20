@@ -476,6 +476,10 @@ body{
 .unis__name:hover{color:rgba(255,255,255,0.5)}
 
 /* ── PRICING ──────────────────────────────── */
+.urgency-banner{background:rgba(201,168,76,0.08);border-top:1px solid rgba(201,168,76,0.25);border-bottom:1px solid rgba(201,168,76,0.25);padding:14px 0;text-align:center}
+.urgency-banner .container{display:flex;align-items:center;justify-content:center;gap:10px}
+.urgency-banner__dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;flex-shrink:0}
+.urgency-banner__text{font-size:14px;color:var(--gold);font-weight:500;letter-spacing:0.02em}
 .pricing{padding:100px 0}
 .pricing__header{
   display:grid;grid-template-columns:1fr 1fr;gap:80px;
@@ -968,6 +972,13 @@ body{
       </div>
     </div>
 
+    <div class="urgency-banner" style="margin-bottom:32px">
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px">
+        <span class="urgency-banner__dot"></span>
+        <span class="urgency-banner__text">Spring 2026 intake now open — only 12 spots remaining this cycle.</span>
+      </div>
+    </div>
+
     <div class="pricing__grid reveal">
       <div class="pcard">
         <div class="pcard__tier">Entry</div>
@@ -981,7 +992,7 @@ body{
         <ul class="pcard__features" aria-label="Prospect plan features">
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Athlete profile creation</li>
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Highlight reel edit (1 video)</li>
-          <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Outreach to 150+ coaches</li>
+          <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Outreach to 600+ coaches</li>
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>NCAA eligibility guidance</li>
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>3-month support</li>
         </ul>
@@ -994,18 +1005,18 @@ body{
         <div class="pcard__name">Contender</div>
         <div class="pcard__price">
           <span class="pcard__sym">£</span>
-          <span class="pcard__num">1,750</span>
+          <span class="pcard__num">1,000</span>
         </div>
         <div class="pcard__per">One-time payment</div>
         <div class="pcard__line"></div>
         <ul class="pcard__features" aria-label="Contender plan features">
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Everything in Prospect</li>
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Highlight reel edit (3 videos)</li>
-          <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Outreach to 500+ coaches</li>
+          <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Outreach to 1,000+ coaches</li>
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Campus visit coordination</li>
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Scholarship negotiation</li>
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Dedicated personal advisor</li>
-          <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>12-month support</li>
+          <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>6-month support</li>
         </ul>
         <button class="pcard__btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Apply Now</button>
       </div>
@@ -1015,7 +1026,7 @@ body{
         <div class="pcard__name">Elite Pro</div>
         <div class="pcard__price">
           <span class="pcard__sym">£</span>
-          <span class="pcard__num">3,000</span>
+          <span class="pcard__num">1,350</span>
         </div>
         <div class="pcard__per">One-time payment</div>
         <div class="pcard__line"></div>
@@ -1023,10 +1034,10 @@ body{
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Everything in Contender</li>
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Division I targeting</li>
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Unlimited reel edits</li>
-          <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>1,200+ coach outreach</li>
+          <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>2,000+ coach outreach</li>
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Full visa &amp; enrollment support</li>
           <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Pre-arrival mentoring</li>
-          <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>24 months + alumni network</li>
+          <li class="pcard__feat"><span class="pcard__check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>12-month support</li>
         </ul>
         <button class="pcard__btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Get Elite Access</button>
       </div>
