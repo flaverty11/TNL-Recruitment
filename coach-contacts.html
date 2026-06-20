@@ -1012,7 +1012,7 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
     spinner.classList.add('show');
     errEl.classList.remove('show');
 
-    fetch('https://tnl-payments-production.up.railway.app/create-checkout-session', {
+    fetch('/api/create-checkout-session', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
