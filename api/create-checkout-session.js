@@ -1,9 +1,11 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const Stripe = require('stripe');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
+
+  const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
   try {
     const { productKey, amountPence, productName } = req.body;
@@ -29,4 +31,4 @@ export default async function handler(req, res) {
   } catch (err) {
     return res.status(400).json({ error: err.message });
   }
-}
+};
