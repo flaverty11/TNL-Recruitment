@@ -10,6 +10,16 @@
     { "src": "*.txt", "use": "@vercel/static" },
     { "src": "*.json", "use": "@vercel/static" }
   ],
+  "headers": [
+    {
+      "source": "/(.*\\.html)",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }]
+    },
+    {
+      "source": "/",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }]
+    }
+  ],
   "routes": [
     { "src": "/api/create-checkout-session", "dest": "/api/create-checkout-session.js" },
     { "src": "/api/submit-application", "dest": "/api/submit-application.js" },
