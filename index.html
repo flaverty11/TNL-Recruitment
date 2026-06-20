@@ -283,7 +283,9 @@ body{
   transition:color .3s;
 }
 .marquee__item:hover{color:var(--text-2)}
-.marquee__item::after{content:'✦';font-size:10px;color:var(--gold);opacity:0.6}
+.marquee__item::after{content:'';display:none}
+.marquee__item{display:inline-flex;align-items:center;gap:8px}
+.marquee__item img{width:24px;height:24px;object-fit:contain;opacity:0.85}
 
 /* ── STATS SECTION ────────────────────────── */
 .stats{padding:100px 0}
@@ -786,24 +788,24 @@ body{
 <!-- MARQUEE -->
 <div class="marquee" id="stats" aria-label="Partner universities" aria-hidden="true">
   <div class="marquee__track">
-    <span class="marquee__item">Georgetown</span>
-    <span class="marquee__item">Penn State</span>
-    <span class="marquee__item">UCLA</span>
-    <span class="marquee__item">Duke</span>
-    <span class="marquee__item">Syracuse</span>
-    <span class="marquee__item">Wake Forest</span>
-    <span class="marquee__item">Indiana</span>
-    <span class="marquee__item">UConn</span>
-    <span class="marquee__item">Creighton</span>
-    <span class="marquee__item">Georgetown</span>
-    <span class="marquee__item">Penn State</span>
-    <span class="marquee__item">UCLA</span>
-    <span class="marquee__item">Duke</span>
-    <span class="marquee__item">Syracuse</span>
-    <span class="marquee__item">Wake Forest</span>
-    <span class="marquee__item">Indiana</span>
-    <span class="marquee__item">UConn</span>
-    <span class="marquee__item">Creighton</span>
+    <span class="marquee__item"><img src="images/colleges/georgetown.png" alt="Georgetown">Georgetown</span>
+    <span class="marquee__item"><img src="images/colleges/penn-state.png" alt="Penn State">Penn State</span>
+    <span class="marquee__item"><img src="images/colleges/ucla.png" alt="UCLA">UCLA</span>
+    <span class="marquee__item"><img src="images/colleges/duke.png" alt="Duke">Duke</span>
+    <span class="marquee__item"><img src="images/colleges/syracuse.png" alt="Syracuse">Syracuse</span>
+    <span class="marquee__item"><img src="images/colleges/wake-forest.png" alt="Wake Forest">Wake Forest</span>
+    <span class="marquee__item"><img src="images/colleges/indiana.png" alt="Indiana">Indiana</span>
+    <span class="marquee__item"><img src="images/colleges/uconn.png" alt="UConn">UConn</span>
+    <span class="marquee__item"><img src="images/colleges/creighton.png" alt="Creighton">Creighton</span>
+    <span class="marquee__item"><img src="images/colleges/georgetown.png" alt="Georgetown">Georgetown</span>
+    <span class="marquee__item"><img src="images/colleges/penn-state.png" alt="Penn State">Penn State</span>
+    <span class="marquee__item"><img src="images/colleges/ucla.png" alt="UCLA">UCLA</span>
+    <span class="marquee__item"><img src="images/colleges/duke.png" alt="Duke">Duke</span>
+    <span class="marquee__item"><img src="images/colleges/syracuse.png" alt="Syracuse">Syracuse</span>
+    <span class="marquee__item"><img src="images/colleges/wake-forest.png" alt="Wake Forest">Wake Forest</span>
+    <span class="marquee__item"><img src="images/colleges/indiana.png" alt="Indiana">Indiana</span>
+    <span class="marquee__item"><img src="images/colleges/uconn.png" alt="UConn">UConn</span>
+    <span class="marquee__item"><img src="images/colleges/creighton.png" alt="Creighton">Creighton</span>
   </div>
 </div>
 
