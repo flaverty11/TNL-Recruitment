@@ -1279,7 +1279,7 @@ body{
       message: document.getElementById('msg').value.trim()
     };
 
-    fetch('/.netlify/functions/submit-application', {
+    fetch('/api/submit-application', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)

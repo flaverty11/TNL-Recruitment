@@ -2,6 +2,7 @@
   "version": 2,
   "builds": [
     { "src": "api/create-checkout-session.js", "use": "@vercel/node" },
+    { "src": "api/submit-application.js", "use": "@vercel/node" },
     { "src": "*.html", "use": "@vercel/static" },
     { "src": "images/**", "use": "@vercel/static" },
     { "src": "*.png", "use": "@vercel/static" },
@@ -11,6 +12,7 @@
   ],
   "routes": [
     { "src": "/api/create-checkout-session", "dest": "/api/create-checkout-session.js" },
+    { "src": "/api/submit-application", "dest": "/api/submit-application.js" },
     { "src": "/images/(.*)", "dest": "/images/$1" },
     { "src": "/(.*\\.html)", "dest": "/$1" },
     { "src": "/", "dest": "/index.html" },
