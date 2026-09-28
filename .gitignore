@@ -1,0 +1,12 @@
+# Local Netlify folder
+.netlify
+
+# macOS / dependencies / local env
+.DS_Store
+node_modules/
+.env
+.env.*
+.vercel
+
+# Paid product files: never commit these, the repo is public
+*.pdf

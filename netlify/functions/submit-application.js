@@ -1,48 +1,21 @@
-const { Resend } = require('resend');
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Netlify wrapper around the shared handler in api/submit-application.js (used by Vercel).
+const handler = require('../../api/submit-application.js');
 
 exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
-  }
-
+  let body = {};
   try {
-    const { firstName, lastName, email, phone, age, position, country, club, level, startTerm, video, message } = JSON.parse(event.body);
-
-    await resend.emails.send({
-      from: 'TNL Website <noreply@tnlrecruitment.com>',
-      to: 'tnlrecruitment@outlook.com',
-      replyTo: email,
-      subject: `New Application — ${firstName} ${lastName}`,
-      text: `
-New scholarship application from The Next Level website:
-
-Name: ${firstName} ${lastName}
-Email: ${email}
-Phone: ${phone || '(not provided)'}
-Age: ${age}
-Position: ${position}
-Country: ${country}
-Club: ${club || '(not provided)'}
-Level: ${level || '(not provided)'}
-Planned start: ${startTerm || '(not provided)'}
-Highlight video: ${video || '(not provided)'}
-
-Message:
-${message || '(none provided)'}
-      `.trim()
-    });
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ success: true })
-    };
+    body = JSON.parse(event.body || '{}');
   } catch (err) {
-    console.error('Email send failed:', err.message);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: err.message })
-    };
+    return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON' }) };
   }
+
+  let statusCode = 200;
+  let payload = {};
+  const res = {
+    status(code) { statusCode = code; return res; },
+    json(data) { payload = data; return res; },
+  };
+
+  await handler({ method: event.httpMethod, body }, res);
+  return { statusCode, body: JSON.stringify(payload) };
 };

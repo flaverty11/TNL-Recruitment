@@ -48,6 +48,7 @@
 }
 </script>
 
+<link rel="preload" as="image" href="images/img-1.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
@@ -641,6 +642,7 @@ body{
 .ftextarea{resize:vertical;min-height:90px}
 
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fhp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 
 .fsubmit{
   width:100%;padding:14px;
@@ -739,7 +741,7 @@ body{
   <div class="nav__inner">
     <a href="#" class="nav__logo" aria-label="The Next Level — Home">
       <div class="nav__logo-icon" aria-hidden="true">
-        <img src="images/tnl-badge.webp" alt="TNL Badge" style="width:32px;height:32px;object-fit:cover;border-radius:50%;">
+        <img src="images/tnl-badge.webp" alt="TNL Badge" width="32" height="32" style="width:32px;height:32px;object-fit:cover;border-radius:50%;">
       </div>
       <span class="nav__wordmark">The <em>Next</em> Level</span>
     </a>
@@ -803,22 +805,22 @@ body{
 <!-- MARQUEE -->
 <div class="marquee" id="stats" aria-label="Universities our athletes have joined" aria-hidden="true">
   <div class="marquee__track">
-    <span class="marquee__item"><img src="images/colleges/georgetown.png" alt="Georgetown">Georgetown</span>
-    <span class="marquee__item"><img src="images/colleges/penn-state.png" alt="Penn State">Penn State</span>
-    <span class="marquee__item"><img src="images/colleges/ucla.png" alt="UCLA">UCLA</span>
-    <span class="marquee__item"><img src="images/colleges/duke.png" alt="Duke">Duke</span>
-    <span class="marquee__item"><img src="images/colleges/syracuse.png" alt="Syracuse">Syracuse</span>
-    <span class="marquee__item"><img src="images/colleges/indiana.png" alt="Indiana">Indiana</span>
-    <span class="marquee__item"><img src="images/colleges/uconn.png" alt="UConn">UConn</span>
-    <span class="marquee__item"><img src="images/colleges/creighton.png" alt="Creighton">Creighton</span>
-    <span class="marquee__item"><img src="images/colleges/georgetown.png" alt="Georgetown">Georgetown</span>
-    <span class="marquee__item"><img src="images/colleges/penn-state.png" alt="Penn State">Penn State</span>
-    <span class="marquee__item"><img src="images/colleges/ucla.png" alt="UCLA">UCLA</span>
-    <span class="marquee__item"><img src="images/colleges/duke.png" alt="Duke">Duke</span>
-    <span class="marquee__item"><img src="images/colleges/syracuse.png" alt="Syracuse">Syracuse</span>
-    <span class="marquee__item"><img src="images/colleges/indiana.png" alt="Indiana">Indiana</span>
-    <span class="marquee__item"><img src="images/colleges/uconn.png" alt="UConn">UConn</span>
-    <span class="marquee__item"><img src="images/colleges/creighton.png" alt="Creighton">Creighton</span>
+    <span class="marquee__item"><img src="images/colleges/georgetown.png" width="24" height="24" alt="Georgetown">Georgetown</span>
+    <span class="marquee__item"><img src="images/colleges/penn-state.png" width="24" height="24" alt="Penn State">Penn State</span>
+    <span class="marquee__item"><img src="images/colleges/ucla.png" width="24" height="24" alt="UCLA">UCLA</span>
+    <span class="marquee__item"><img src="images/colleges/duke.png" width="24" height="24" alt="Duke">Duke</span>
+    <span class="marquee__item"><img src="images/colleges/syracuse.png" width="24" height="24" alt="Syracuse">Syracuse</span>
+    <span class="marquee__item"><img src="images/colleges/indiana.png" width="24" height="24" alt="Indiana">Indiana</span>
+    <span class="marquee__item"><img src="images/colleges/uconn.png" width="24" height="24" alt="UConn">UConn</span>
+    <span class="marquee__item"><img src="images/colleges/creighton.png" width="24" height="24" alt="Creighton">Creighton</span>
+    <span class="marquee__item"><img src="images/colleges/georgetown.png" width="24" height="24" alt="Georgetown">Georgetown</span>
+    <span class="marquee__item"><img src="images/colleges/penn-state.png" width="24" height="24" alt="Penn State">Penn State</span>
+    <span class="marquee__item"><img src="images/colleges/ucla.png" width="24" height="24" alt="UCLA">UCLA</span>
+    <span class="marquee__item"><img src="images/colleges/duke.png" width="24" height="24" alt="Duke">Duke</span>
+    <span class="marquee__item"><img src="images/colleges/syracuse.png" width="24" height="24" alt="Syracuse">Syracuse</span>
+    <span class="marquee__item"><img src="images/colleges/indiana.png" width="24" height="24" alt="Indiana">Indiana</span>
+    <span class="marquee__item"><img src="images/colleges/uconn.png" width="24" height="24" alt="UConn">UConn</span>
+    <span class="marquee__item"><img src="images/colleges/creighton.png" width="24" height="24" alt="Creighton">Creighton</span>
   </div>
 </div>
 
@@ -861,7 +863,7 @@ body{
     </div>
     <div class="process__steps reveal">
       <div class="process__step">
-        <div class="process__step-img"><img src="images/img-2.jpg" alt="Advisor evaluating an athlete's soccer profile and footage"></div>
+        <div class="process__step-img"><img src="images/img-2.jpg" loading="lazy" decoding="async" alt="Advisor evaluating an athlete's soccer profile and footage"></div>
         <div class="process__step-body-wrap">
           <div class="process__step-n" aria-hidden="true">01</div>
           <div class="process__step-title">Free Evaluation</div>
@@ -869,7 +871,7 @@ body{
         </div>
       </div>
       <div class="process__step">
-        <div class="process__step-img"><img src="images/img-3.jpg" alt="Athlete training on the pitch building their highlight reel"></div>
+        <div class="process__step-img"><img src="images/img-3.jpg" loading="lazy" decoding="async" alt="Athlete training on the pitch building their highlight reel"></div>
         <div class="process__step-body-wrap">
           <div class="process__step-n" aria-hidden="true">02</div>
           <div class="process__step-title">Athlete Profile</div>
@@ -877,7 +879,7 @@ body{
         </div>
       </div>
       <div class="process__step">
-        <div class="process__step-img"><img src="images/img-4.jpg" alt="Coach outreach call to Division coaches"></div>
+        <div class="process__step-img"><img src="images/img-4.jpg" loading="lazy" decoding="async" alt="Coach outreach call to Division coaches"></div>
         <div class="process__step-body-wrap">
           <div class="process__step-n" aria-hidden="true">03</div>
           <div class="process__step-title">Coach Outreach</div>
@@ -885,7 +887,7 @@ body{
         </div>
       </div>
       <div class="process__step">
-        <div class="process__step-img"><img src="images/img-5.jpg" alt="Athlete signing their scholarship offer"></div>
+        <div class="process__step-img"><img src="images/img-5.jpg" loading="lazy" decoding="async" alt="Athlete signing their scholarship offer"></div>
         <div class="process__step-body-wrap">
           <div class="process__step-n" aria-hidden="true">04</div>
           <div class="process__step-title">Sign &amp; Succeed</div>
@@ -911,7 +913,7 @@ body{
 
     <div class="testimonials__grid reveal">
       <div class="pcard-athlete">
-        <img class="pcard-athlete__img" src="images/img-6.webp" alt="Liam Murphy — Northeastern University NCAA D1 athlete">
+        <img class="pcard-athlete__img" loading="lazy" decoding="async" src="images/img-6.webp" alt="Liam Murphy — Northeastern University NCAA D1 athlete">
         <div class="pcard-athlete__overlay" aria-hidden="true"></div>
         <div class="pcard-athlete__body">
           <div class="pcard-athlete__name">Liam Murphy</div>
@@ -921,7 +923,7 @@ body{
       </div>
 
       <div class="pcard-athlete">
-        <img class="pcard-athlete__img" src="images/img-7.webp" alt="Julian Da Costa — Mobile Rams NAIA D1 athlete">
+        <img class="pcard-athlete__img" loading="lazy" decoding="async" src="images/img-7.webp" alt="Julian Da Costa — Mobile Rams NAIA D1 athlete">
         <div class="pcard-athlete__overlay" aria-hidden="true"></div>
         <div class="pcard-athlete__body">
           <div class="pcard-athlete__name">Julian Da Costa</div>
@@ -931,7 +933,7 @@ body{
       </div>
 
       <div class="pcard-athlete">
-        <img class="pcard-athlete__img" src="images/img-8.webp" alt="Charlie Taylor — West Liberty University NCAA D2 athlete">
+        <img class="pcard-athlete__img" loading="lazy" decoding="async" src="images/img-8.webp" alt="Charlie Taylor — West Liberty University NCAA D2 athlete">
         <div class="pcard-athlete__overlay" aria-hidden="true"></div>
         <div class="pcard-athlete__body">
           <div class="pcard-athlete__name">Charlie Taylor</div>
@@ -1196,6 +1198,10 @@ body{
               <label class="flabel" for="msg">Anything else we should know?</label>
               <textarea class="ftextarea" id="msg" placeholder="Grades, height, achievements, the kind of university you're after..."></textarea>
             </div>
+            <div class="fhp" aria-hidden="true">
+              <label for="website">Leave this field empty</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
             <button type="submit" class="fsubmit">Request Free Evaluation →</button>
             <div class="fnote" role="status" aria-live="polite">We never sell or share your information.</div>
           </form>
@@ -1336,6 +1342,7 @@ body{
       level: document.getElementById('level').value,
       startTerm: document.getElementById('start').value,
       video: document.getElementById('video').value.trim(),
+      website: document.getElementById('website').value,
       message: document.getElementById('msg').value.trim()
     };
 
