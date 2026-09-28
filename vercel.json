@@ -21,6 +21,7 @@
     }
   ],
   "routes": [
+    { "src": "/the-next-level(\\.html)?", "status": 301, "headers": { "Location": "/" } },
     { "src": "/api/create-checkout-session", "dest": "/api/create-checkout-session.js" },
     { "src": "/api/submit-application", "dest": "/api/submit-application.js" },
     { "src": "/images/(.*)", "dest": "/images/$1" },

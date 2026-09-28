@@ -155,7 +155,7 @@ body{
 .nav__logo-icon svg{width:16px;height:16px}
 .nav__wordmark{
   font-family:'DM Serif Display',serif;font-size:17px;
-  color:var(--white);letter-spacing:0.01em;
+  color:var(--white);letter-spacing:0.01em;white-space:nowrap;
 }
 .nav__wordmark em{font-style:italic;color:var(--gold)}
 
@@ -188,6 +188,7 @@ body{
   .nav__links{display:none}
   .nav__ham{display:flex}
 }
+@media(max-width:520px){.nav__trust{display:none!important}}
 
 /* ── HERO ─────────────────────────────────── */
 .hero{
@@ -198,7 +199,7 @@ body{
 
 .hero__bg{
   position:absolute;inset:0;
-  background-image:url("images/img-1.png");
+  background-image:url("images/img-1.webp");
   background-size:cover;
   background-position:center 40%;
   background-repeat:no-repeat;
@@ -727,14 +728,14 @@ body{
   <div class="nav__inner">
     <a href="#" class="nav__logo" aria-label="The Next Level — Home">
       <div class="nav__logo-icon" aria-hidden="true">
-        <img src="images/tnl-badge.png" alt="TNL Badge" style="width:32px;height:32px;object-fit:cover;border-radius:50%;">
+        <img src="images/tnl-badge.webp" alt="TNL Badge" style="width:32px;height:32px;object-fit:cover;border-radius:50%;">
       </div>
       <span class="nav__wordmark">The <em>Next</em> Level</span>
     </a>
     <a href="https://www.instagram.com/tnlrecruit" target="_blank" rel="noopener" aria-label="TNL on Instagram" style="display:flex;align-items:center;margin-left:18px;opacity:0.7;transition:opacity 0.2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#ffffff" stroke="none"/></svg>
     </a>
-    <div style="display:flex;align-items:center;gap:6px;margin-left:18px;opacity:0.85;border-left:1px solid rgba(255,255,255,0.15);padding-left:18px">
+    <div class="nav__trust" style="display:flex;align-items:center;gap:6px;margin-left:18px;opacity:0.85;border-left:1px solid rgba(255,255,255,0.15);padding-left:18px">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.09 8.26L20.74 8.27L15.44 12.14L17.52 18.4L12 14.54L6.48 18.4L8.56 12.14L3.26 8.27L9.91 8.26L12 2Z" fill="#00B67A"/></svg>
       <span style="color:#00B67A;font-weight:700;font-size:12px;letter-spacing:0.01em">Trustpilot</span>
       <div style="display:flex;gap:1px">
@@ -752,7 +753,6 @@ body{
       <li><a href="#stories">Stories</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="faq.html">FAQ</a></li>
-      <li><a href="blog.html">Blog</a></li>
       <li><a href="#apply" class="btn btn--white" style="padding:9px 18px;font-size:13px">Apply Now</a></li>
     </ul>
     <button class="nav__ham" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="navmob">
@@ -765,7 +765,6 @@ body{
     <a href="#stories" role="menuitem">Stories</a>
     <a href="#pricing" role="menuitem">Pricing</a>
     <a href="faq.html" role="menuitem">FAQ</a>
-    <a href="blog.html" role="menuitem">Blog</a>
     <a href="#apply" class="btn btn--white" role="menuitem">Apply Now</a>
   </div>
 </nav>
@@ -911,7 +910,7 @@ body{
 
     <div class="testimonials__grid reveal">
       <div class="pcard-athlete">
-        <img class="pcard-athlete__img" src="images/img-6.png" alt="Jack — Northeastern University NCAA D1 athlete">
+        <img class="pcard-athlete__img" src="images/img-6.webp" alt="Liam Murphy — Northeastern University NCAA D1 athlete">
         <div class="pcard-athlete__overlay" aria-hidden="true"></div>
         <div class="pcard-athlete__body">
           <div class="pcard-athlete__name">Liam Murphy</div>
@@ -921,7 +920,7 @@ body{
       </div>
 
       <div class="pcard-athlete">
-        <img class="pcard-athlete__img" src="images/img-7.png" alt="Julian Da Costa — Mobile Rams NAIA D1 athlete">
+        <img class="pcard-athlete__img" src="images/img-7.webp" alt="Julian Da Costa — Mobile Rams NAIA D1 athlete">
         <div class="pcard-athlete__overlay" aria-hidden="true"></div>
         <div class="pcard-athlete__body">
           <div class="pcard-athlete__name">Julian Da Costa</div>
@@ -931,7 +930,7 @@ body{
       </div>
 
       <div class="pcard-athlete">
-        <img class="pcard-athlete__img" src="images/img-8.png" alt="Charlie Taylor — West Liberty University NCAA D2 athlete">
+        <img class="pcard-athlete__img" src="images/img-8.webp" alt="Charlie Taylor — West Liberty University NCAA D2 athlete">
         <div class="pcard-athlete__overlay" aria-hidden="true"></div>
         <div class="pcard-athlete__body">
           <div class="pcard-athlete__name">Charlie Taylor</div>
@@ -991,7 +990,7 @@ body{
     <div class="urgency-banner" style="margin-bottom:32px">
       <div style="display:flex;align-items:center;justify-content:center;gap:10px">
         <span class="urgency-banner__dot"></span>
-        <span class="urgency-banner__text">Spring 2026 intake now open — only 12 spots remaining this cycle.</span>
+        <span class="urgency-banner__text">Fall 2027 intake now open — we take on a limited number of athletes each cycle.</span>
       </div>
     </div>
 
@@ -1150,12 +1149,13 @@ body{
               <label class="flabel" for="country">Country <span aria-hidden="true">*</span></label>
               <select class="fselect" id="country" required>
                 <option value="" disabled selected>Select your country</option>
-                <option>United States</option><option>United Kingdom</option>
-                <option>Spain</option><option>Brazil</option><option>Colombia</option>
-                <option>Nigeria</option><option>Mexico</option><option>Portugal</option>
-                <option>Argentina</option><option>Germany</option><option>France</option>
-                <option>Other</option>
-              </select>
+            <option>England</option><option>Scotland</option><option>Wales</option>
+            <option>Northern Ireland</option><option>Republic of Ireland</option>
+            <option>United States</option><option>Spain</option><option>Portugal</option>
+            <option>France</option><option>Germany</option><option>Brazil</option>
+            <option>Argentina</option><option>Colombia</option><option>Mexico</option>
+            <option>Nigeria</option><option>Other</option>
+          </select>
             </div>
             <div class="fgroup">
               <label class="flabel" for="msg">Tell us about yourself</label>
@@ -1191,7 +1191,6 @@ body{
         <div class="footer__col-title">Resources</div>
         <ul class="footer__links">
           <li><a href="faq.html">Scholarship FAQ</a></li>
-          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
       <div>
@@ -1204,7 +1203,7 @@ body{
       </div>
     </div>
     <div class="footer__bottom">
-      <span>© 2025 The Next Level. All rights reserved.</span>
+      <span>© 2026 The Next Level. All rights reserved.</span>
       <span><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
     </div>
   </div>
@@ -1293,6 +1292,7 @@ body{
       firstName: document.getElementById('fn').value.trim(),
       lastName: document.getElementById('ln').value.trim(),
       email: document.getElementById('em').value.trim(),
+      phone: document.getElementById('ph').value.trim(),
       age: document.getElementById('age').value,
       position: document.getElementById('pos').value,
       country: document.getElementById('country').value,
@@ -1304,7 +1304,7 @@ body{
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     })
-    .then(function(r){ return r.json(); })
+    .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function(data){
       if (data.success) {
         var t = document.getElementById('toast');
@@ -1312,11 +1312,11 @@ body{
         setTimeout(function(){ t.classList.remove('show'); }, 4500);
         form.reset();
       } else {
-        alert('Something went wrong sending your application. Please email us directly at tnlrecruitment@outlook.com.');
+        alert('Sorry, something went wrong sending your application. Please message us on WhatsApp (+44 7346 804838) or email tnlrecruitment@outlook.com.');
       }
     })
     .catch(function(){
-      alert('Could not reach the server. Make sure tnl-server.js is running, or email us directly at tnlrecruitment@outlook.com.');
+      alert('Sorry, we couldn\'t send your application. Please message us on WhatsApp (+44 7346 804838) or email tnlrecruitment@outlook.com and we\'ll get back to you.');
     })
     .finally(function(){
       submitBtn.disabled = false;

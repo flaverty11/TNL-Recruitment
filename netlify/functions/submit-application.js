@@ -8,7 +8,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { firstName, lastName, email, age, position, country, message } = JSON.parse(event.body);
+    const { firstName, lastName, email, phone, age, position, country, message } = JSON.parse(event.body);
 
     await resend.emails.send({
       from: 'TNL Website <noreply@tnlrecruitment.com>',
@@ -20,6 +20,7 @@ New scholarship application from The Next Level website:
 
 Name: ${firstName} ${lastName}
 Email: ${email}
+Phone: ${phone || '(not provided)'}
 Age: ${age}
 Position: ${position}
 Country: ${country}
