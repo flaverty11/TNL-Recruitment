@@ -1,32 +1,24 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "api/create-checkout-session.js", "use": "@vercel/node" },
-    { "src": "api/submit-application.js", "use": "@vercel/node" },
-    { "src": "*.html", "use": "@vercel/static" },
-    { "src": "images/**", "use": "@vercel/static" },
-    { "src": "*.png", "use": "@vercel/static" },
-    { "src": "*.xml", "use": "@vercel/static" },
-    { "src": "*.txt", "use": "@vercel/static" },
-    { "src": "*.json", "use": "@vercel/static" }
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/the-next-level", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
-      "source": "/(.*\\.html)",
-      "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }]
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
     },
     {
-      "source": "/",
-      "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }]
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }
+      ]
     }
-  ],
-  "routes": [
-    { "src": "/the-next-level(\\.html)?", "status": 301, "headers": { "Location": "/" } },
-    { "src": "/api/create-checkout-session", "dest": "/api/create-checkout-session.js" },
-    { "src": "/api/submit-application", "dest": "/api/submit-application.js" },
-    { "src": "/images/(.*)", "dest": "/images/$1" },
-    { "src": "/(.*\\.html)", "dest": "/$1" },
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/(.*)", "dest": "/$1.html" }
   ]
 }

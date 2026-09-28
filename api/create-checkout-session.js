@@ -36,8 +36,8 @@ module.exports = async function handler(req, res) {
         quantity: 1,
       }],
       mode: 'payment',
-      success_url: 'https://www.tnlrecruitment.com/coach-contacts.html?payment=success',
-      cancel_url: 'https://www.tnlrecruitment.com/coach-contacts.html?payment=cancelled',
+      success_url: 'https://www.tnlrecruitment.com/coach-contacts?payment=success',
+      cancel_url: 'https://www.tnlrecruitment.com/coach-contacts?payment=cancelled',
       metadata: { productKey },
       customer_creation: 'always',
     });
