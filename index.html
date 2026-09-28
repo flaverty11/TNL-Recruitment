@@ -115,12 +115,12 @@ body{
 }
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:.1s}
-.reveal-delay-2{transition-delay:.2s}
-.reveal-delay-3{transition-delay:.3s}
-.reveal-fade{opacity:0;transition:opacity .9s var(--ease)}
+.reveal-delay-1{transition-delay:.06s}
+.reveal-delay-2{transition-delay:.12s}
+.reveal-delay-3{transition-delay:.18s}
+.reveal-fade{opacity:0;transition:opacity .5s var(--ease)}
 .reveal-fade.visible{opacity:1}
 
 /* BUTTONS */
@@ -146,7 +146,10 @@ body{
   transition:background .3s var(--ease),border-color .3s var(--ease);
   border-bottom:1px solid transparent;
 }
-.nav.scrolled,.nav.menu-open{background:rgba(8,8,8,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:var(--border)}
+.nav.scrolled,.nav.menu-open{background:rgba(8,8,8,0.97);border-color:var(--border)}
+/* Blur lives on a pseudo-element: a backdrop-filter on .nav itself would trap the fixed mobile menu inside the 64px bar */
+.nav::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none}
+.nav.scrolled::before,.nav.menu-open::before{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 
 .nav__inner{
   display:flex;align-items:center;justify-content:space-between;
@@ -174,7 +177,7 @@ body{
 
 .nav__mob{
   display:none;position:fixed;inset:64px 0 0;
-  background:rgba(8,8,8,0.99);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  background:var(--bg);
   padding:24px 28px;
   flex-direction:column;gap:0;z-index:99;
   border-top:1px solid var(--border-hover);
@@ -188,6 +191,8 @@ body{
 }
 .nav__mob a:hover{color:var(--gold);background:var(--bg-2)}
 .nav__mob .btn{margin-top:20px;width:100%;justify-content:center;font-size:14px}
+.nav__mob a.btn--white{background:var(--white);color:#000;border-color:var(--white);padding-left:18px;text-align:center}
+.nav__mob a.btn--white:hover{background:var(--off-white);color:#000}
 
 @media(max-width:768px){
   .nav__links{display:none}
@@ -259,6 +264,9 @@ body{
   max-width:420px;
 }
 .hero__actions{display:flex;gap:10px;flex-shrink:0}
+.hero__trust{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;margin-top:28px;font-size:13px;color:var(--text-2);animation:fadeUp .8s .45s both}
+.hero__trust li{display:flex;align-items:center;gap:8px}
+.hero__trust li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold)}
 
 .hero__scroll{
   position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
@@ -293,7 +301,7 @@ body{
 .marquee__item img{width:24px;height:24px;object-fit:contain;opacity:0.85}
 
 /* ── STATS SECTION ────────────────────────── */
-.stats{padding:100px 0}
+.stats{padding:72px 0}
 .stats__grid{
   display:grid;grid-template-columns:repeat(4,1fr);
   border:1px solid var(--border);border-radius:var(--radius-xl);
@@ -330,7 +338,7 @@ body{
 }
 
 /* ── PROCESS SECTION ──────────────────────── */
-.process{padding:0 0 100px}
+.process{padding:0 0 72px}
 
 .process__header{
   display:grid;grid-template-columns:1fr 1fr;gap:80px;
@@ -392,7 +400,7 @@ body{
 }
 
 /* ── TESTIMONIALS ─────────────────────────── */
-.testimonials{padding:100px 0;background:var(--bg)}
+.testimonials{padding:72px 0;background:var(--bg)}
 
 .testimonials__header{
   display:flex;align-items:flex-end;justify-content:space-between;
@@ -471,24 +479,32 @@ body{
 }
 
 /* ── UNIVERSITIES ─────────────────────────── */
-.unis{padding:80px 0;border-top:1px solid var(--border)}
-.unis__inner{
-  display:flex;flex-wrap:wrap;align-items:center;
-  justify-content:center;gap:40px 64px;
-}
-.unis__name{
-  font-family:'DM Serif Display',serif;font-size:16px;
-  color:rgba(255,255,255,0.18);letter-spacing:0.04em;
-  transition:color .3s;cursor:default;
-}
-.unis__name:hover{color:rgba(255,255,255,0.5)}
 
 /* ── PRICING ──────────────────────────────── */
 .urgency-banner{background:rgba(201,168,76,0.08);border-top:1px solid rgba(201,168,76,0.25);border-bottom:1px solid rgba(201,168,76,0.25);padding:14px 0;text-align:center}
 .urgency-banner .container{display:flex;align-items:center;justify-content:center;gap:10px}
 .urgency-banner__dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;flex-shrink:0}
 .urgency-banner__text{font-size:14px;color:var(--gold);font-weight:500;letter-spacing:0.02em}
-.pricing{padding:100px 0}
+.pricing{padding:72px 0}
+.pricing__help{text-align:center;margin-top:28px;font-size:14px;color:var(--text-2)}
+.pricing__help a{color:var(--gold);text-underline-offset:3px}
+
+/* ── FAQ PREVIEW ──────────────────────────── */
+.hfaq{padding:72px 0;border-top:1px solid var(--border)}
+.hfaq__inner{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start}
+.hfaq__h{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(34px,4vw,52px);line-height:1.05;margin-bottom:20px}
+.hfaq__h em{font-style:italic;color:var(--gold)}
+.hfaq__all{font-size:14px;color:var(--gold);text-decoration:none}
+.hfaq__all:hover{text-decoration:underline;text-underline-offset:3px}
+.hfaq__list{border-top:1px solid var(--border)}
+.hfaq__item{border-bottom:1px solid var(--border)}
+.hfaq__item summary{list-style:none;cursor:pointer;padding:22px 36px 22px 0;font-size:16px;font-weight:500;color:var(--white);position:relative}
+.hfaq__item summary::-webkit-details-marker{display:none}
+.hfaq__item summary::after{content:'+';position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:300;color:var(--gold);transition:transform .2s}
+.hfaq__item[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.hfaq__item p{padding:0 0 22px;font-size:14px;line-height:1.75;color:var(--text-2);max-width:620px}
+@media(max-width:900px){.hfaq__inner{grid-template-columns:1fr;gap:28px}}
+
 .pricing__header{
   display:grid;grid-template-columns:1fr 1fr;gap:80px;
   align-items:end;margin-bottom:64px;
@@ -574,7 +590,7 @@ body{
 @media(max-width:768px){.pricing__grid{grid-template-columns:1fr;border-radius:var(--radius-xl)}}
 
 /* ── APPLY ────────────────────────────────── */
-.apply{padding:100px 0}
+.apply{padding:72px 0}
 .apply__inner{
   display:grid;grid-template-columns:1fr 1fr;gap:80px;
   align-items:start;
@@ -749,7 +765,6 @@ body{
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#ffffff" stroke="none"/></svg>
     </a>
     <ul class="nav__links" role="list">
-      <li><a href="/coach-contacts">Coach Contacts</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#stories">Stories</a></li>
       <li><a href="#pricing">Pricing</a></li>
@@ -762,7 +777,6 @@ body{
     </button>
   </div>
   <div class="nav__mob" id="navmob" role="menu">
-    <a href="/coach-contacts" role="menuitem">Coach Contacts</a>
     <a href="#process" role="menuitem">Process</a>
     <a href="#stories" role="menuitem">Stories</a>
     <a href="#pricing" role="menuitem">Pricing</a>
@@ -784,7 +798,7 @@ body{
       <span class="hero__tag-text">Placing athletes across the USA since 2018</span>
     </div>
     <h1 class="hero__headline">
-      Where Athletic<br>and Academic<br>Excellence Meet<br><em>the American Dream.</em><span class="sparkle" aria-hidden="true">✦</span>
+      US soccer<br>scholarships for<br>UK &amp; Irish<br><em>players.</em><span class="sparkle" aria-hidden="true">✦</span>
     </h1>
     <div class="hero__bottom">
       <p class="hero__sub">
@@ -795,15 +809,16 @@ body{
         <a href="#process" class="btn btn--white">How It Works</a>
       </div>
     </div>
+    <ul class="hero__trust" aria-label="Why families choose us">
+      <li>Free evaluation</li>
+      <li>Reply within 24 hours</li>
+      <li>No obligation</li>
+    </ul>
   </div>
-  <a href="#stats" class="hero__scroll" aria-label="Scroll down">
-    <span>Scroll</span>
-    <span class="hero__scroll-line" aria-hidden="true"></span>
-  </a>
 </section>
 
 <!-- MARQUEE -->
-<div class="marquee" id="stats" aria-label="Universities our athletes have joined" aria-hidden="true">
+<div class="marquee" id="stats" aria-label="Where our athletes have gone">
   <div class="marquee__track">
     <span class="marquee__item"><img src="images/colleges/georgetown.png" width="24" height="24" alt="Georgetown">Georgetown</span>
     <span class="marquee__item"><img src="images/colleges/penn-state.png" width="24" height="24" alt="Penn State">Penn State</span>
@@ -813,6 +828,7 @@ body{
     <span class="marquee__item"><img src="images/colleges/indiana.png" width="24" height="24" alt="Indiana">Indiana</span>
     <span class="marquee__item"><img src="images/colleges/uconn.png" width="24" height="24" alt="UConn">UConn</span>
     <span class="marquee__item"><img src="images/colleges/creighton.png" width="24" height="24" alt="Creighton">Creighton</span>
+    <span class="marquee__item"><img src="images/colleges/wake-forest.png" width="24" height="24" alt="Wake Forest">Wake Forest</span>
     <span class="marquee__item"><img src="images/colleges/georgetown.png" width="24" height="24" alt="Georgetown">Georgetown</span>
     <span class="marquee__item"><img src="images/colleges/penn-state.png" width="24" height="24" alt="Penn State">Penn State</span>
     <span class="marquee__item"><img src="images/colleges/ucla.png" width="24" height="24" alt="UCLA">UCLA</span>
@@ -821,6 +837,7 @@ body{
     <span class="marquee__item"><img src="images/colleges/indiana.png" width="24" height="24" alt="Indiana">Indiana</span>
     <span class="marquee__item"><img src="images/colleges/uconn.png" width="24" height="24" alt="UConn">UConn</span>
     <span class="marquee__item"><img src="images/colleges/creighton.png" width="24" height="24" alt="Creighton">Creighton</span>
+    <span class="marquee__item"><img src="images/colleges/wake-forest.png" width="24" height="24" alt="Wake Forest">Wake Forest</span>
   </div>
 </div>
 
@@ -960,23 +977,6 @@ body{
   </div>
 </section>
 
-<!-- UNIS -->
-<div class="unis" aria-label="Where our athletes have gone">
-  <div class="container">
-    <p class="label" style="text-align:center;margin-bottom:36px">Where our athletes have gone</p>
-    <div class="unis__inner" role="list">
-      <span class="unis__name" role="listitem">Georgetown</span>
-      <span class="unis__name" role="listitem">Penn State</span>
-      <span class="unis__name" role="listitem">UCLA</span>
-      <span class="unis__name" role="listitem">Duke</span>
-      <span class="unis__name" role="listitem">Syracuse</span>
-      <span class="unis__name" role="listitem">Wake Forest</span>
-      <span class="unis__name" role="listitem">Indiana</span>
-      <span class="unis__name" role="listitem">UConn</span>
-    </div>
-  </div>
-</div>
-
 <!-- PRICING -->
 <section class="pricing" id="pricing" aria-labelledby="pricing-h">
   <div class="container">
@@ -1059,6 +1059,36 @@ body{
         </ul>
         <button class="pcard__btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Get Elite Access</button>
       </div>
+    </div>
+    <p class="pricing__help">Not sure which package is right for you? <a href="#apply">Start with a free evaluation</a> and we'll recommend one honestly.</p>
+  </div>
+</section>
+
+<!-- FAQ PREVIEW -->
+<section class="hfaq" id="faq" aria-labelledby="hfaq-h">
+  <div class="container hfaq__inner">
+    <div class="reveal">
+      <span class="eyebrow">Questions</span>
+      <h2 class="hfaq__h" id="hfaq-h">Things parents<br>always <em>ask.</em></h2>
+      <a href="/faq" class="hfaq__all">See all questions →</a>
+    </div>
+    <div class="hfaq__list reveal reveal-delay-1">
+      <details class="hfaq__item">
+        <summary>Is my son or daughter good enough?</summary>
+        <p>We work with athletes aged 14–20 who are playing at club, academy, or school level and are serious about competing in the United States. There's no need to already be "elite": coaches recruit potential as much as current ability, and our free evaluation will tell you honestly where you stand.</p>
+      </details>
+      <details class="hfaq__item">
+        <summary>How does the free evaluation work?</summary>
+        <p>After you submit the application form, one of our advisors reviews your footage, academic record, and goals, then gives you an honest assessment of which divisions (NCAA D1/D2/D3, NAIA, NJCAA) realistically fit your profile, before you pay anything.</p>
+      </details>
+      <details class="hfaq__item">
+        <summary>Do you guarantee a scholarship offer?</summary>
+        <p>No agency can ethically guarantee a scholarship. Final decisions sit with individual coaches and universities. What we guarantee is the work: professional outreach, a polished athletic profile, and direct access to coaches who are actively recruiting in your position and division.</p>
+      </details>
+      <details class="hfaq__item">
+        <summary>How long does the process take?</summary>
+        <p>Most athletes see their first offers within 2–4 months of completing their profile and highlight reel, though this varies by division, position, and intake timing. The earlier you start relative to your intended start year, the more options you'll have.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -1233,6 +1263,7 @@ body{
         <ul class="footer__links">
           <li><a href="/faq">Scholarship FAQ</a></li>
           <li><a href="/blog">Blog</a></li>
+          <li><a href="/coach-contacts">Coach Contacts</a></li>
         </ul>
       </div>
       <div>
@@ -1305,7 +1336,7 @@ body{
       }
       io.unobserve(e.target);
     });
-  }, {threshold: 0.15});
+  }, {threshold: 0.05, rootMargin: "0px 0px 120px 0px"});
 
   document.querySelectorAll('.reveal, .reveal-fade, [data-target]').forEach(function(el){
     io.observe(el);

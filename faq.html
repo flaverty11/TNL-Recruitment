@@ -129,35 +129,73 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 </style>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<style>
+/* ── SITE HEADER & FOOTER (shared across sub-pages) ── */
+.sc-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.94);border-bottom:1px solid rgba(255,255,255,0.07);font-family:'Inter',sans-serif}
+.sc-nav::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.sc-nav__inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1160px;margin:0 auto;padding:0 28px}
+.sc-nav__logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.sc-nav__badge{width:32px;height:32px;object-fit:cover;border-radius:50%}
+.sc-nav__wordmark{font-family:'DM Serif Display',serif;font-size:17px;color:#fff;letter-spacing:0.01em;white-space:nowrap}
+.sc-nav__wordmark em{font-style:italic;color:#c9a84c}
+.sc-nav__links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
+.sc-nav__links a{font-size:13px;color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s}
+.sc-nav__links a:hover,.sc-nav__links a[aria-current="page"]{color:#fff}
+.sc-nav__cta{display:inline-flex;align-items:center;background:#fff;color:#000!important;font-weight:600;font-size:13px;padding:9px 18px;border-radius:8px;text-decoration:none;transition:background .2s}
+.sc-nav__cta:hover{background:#e8e2d9}
+.sc-nav__ham{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:4px}
+.sc-nav__ham span{display:block;width:20px;height:1.5px;background:rgba(255,255,255,0.55)}
+.sc-nav__mob{display:none;position:fixed;inset:64px 0 0;background:#080808;padding:24px 28px;flex-direction:column;z-index:99;border-top:1px solid rgba(255,255,255,0.14);overflow-y:auto}
+.sc-nav__mob.open{display:flex}
+.sc-nav__mob a{display:block;padding:16px 18px 16px 32px;font-size:16px;font-weight:600;color:#fff;text-decoration:none;background:#1e1e1e;border:1px solid rgba(255,255,255,0.14);border-radius:8px;margin-bottom:10px}
+.sc-nav__mob a:hover{color:#c9a84c;background:#161616}
+.sc-nav__mob a.sc-nav__cta{margin-top:10px;justify-content:center;text-align:center;padding:16px;font-size:15px;background:#fff;color:#000;border-color:#fff}
+@media(max-width:768px){.sc-nav__links{display:none}.sc-nav__ham{display:flex}}
+
+.sc-foot{padding:64px 0 32px;border-top:1px solid rgba(255,255,255,0.07);font-family:'Inter',sans-serif;background:#080808}
+.sc-foot__wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+.sc-foot__top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:32px}
+.sc-foot__brand-name{font-family:'DM Serif Display',serif;font-size:20px;color:#fff;margin-bottom:12px}
+.sc-foot__brand-name em{font-style:italic;color:#c9a84c}
+.sc-foot__brand p{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.7;max-width:260px;margin:0}
+.sc-foot__title{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px}
+.sc-foot__links{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+.sc-foot__links a{font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;transition:color .2s}
+.sc-foot__links a:hover{color:#fff}
+.sc-foot__bottom{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.3);flex-wrap:wrap;gap:12px}
+.sc-foot__bottom a{color:rgba(255,255,255,0.3);text-decoration:none}
+.sc-foot__bottom a:hover{color:rgba(255,255,255,0.55)}
+@media(max-width:900px){.sc-foot__top{grid-template-columns:1fr 1fr}.sc-foot__brand{grid-column:1/-1}}
+@media(max-width:480px){.sc-foot{padding-bottom:96px}}
+</style>
 </head>
 <body>
 
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav__inner">
-    <a href="/" class="nav__logo" aria-label="The Next Level — Home">
-      <div class="nav__logo-icon" aria-hidden="true">
-        <svg viewBox="0 0 16 16" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><polygon points="8,1 11,6.5 15,7.5 11.5,11 12.5,15.5 8,13 3.5,15.5 4.5,11 1,7.5 5,6.5"/></svg>
-      </div>
-      <span class="nav__wordmark">The <em>Next</em> Level</span>
+<nav class="sc-nav" role="navigation" aria-label="Main navigation">
+  <div class="sc-nav__inner">
+    <a href="/" class="sc-nav__logo" aria-label="The Next Level — Home">
+      <img src="/images/tnl-badge.webp" alt="" width="32" height="32" class="sc-nav__badge">
+      <span class="sc-nav__wordmark">The <em>Next</em> Level</span>
     </a>
-    <ul class="nav__links" role="list">
-      <li><a href="/coach-contacts">Coach Contacts</a></li>
+    <ul class="sc-nav__links" role="list">
       <li><a href="/#process">Process</a></li>
+      <li><a href="/#stories">Stories</a></li>
       <li><a href="/#pricing">Pricing</a></li>
-      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/faq" aria-current="page">FAQ</a></li>
       <li><a href="/blog">Blog</a></li>
-      <li><a href="/#apply" class="btn btn--white" style="padding:9px 18px;font-size:13px">Apply Now</a></li>
+      <li><a href="/#apply" class="sc-nav__cta">Apply Now</a></li>
     </ul>
-    <button class="nav__ham" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="navmob">
+    <button class="sc-nav__ham" id="scHam" aria-label="Open menu" aria-expanded="false" aria-controls="scMob">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="nav__mob" id="navmob" role="menu">
-    <a href="/#process" role="menuitem">Process</a>
-    <a href="/#pricing" role="menuitem">Pricing</a>
-    <a href="/faq" role="menuitem">FAQ</a>
-    <a href="/blog" role="menuitem">Blog</a>
-    <a href="/#apply" class="btn btn--white" role="menuitem">Apply Now</a>
+  <div class="sc-nav__mob" id="scMob">
+    <a href="/#process">Process</a>
+    <a href="/#stories">Stories</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/faq">FAQ</a>
+    <a href="/blog">Blog</a>
+    <a href="/#apply" class="sc-nav__cta">Apply Now</a>
   </div>
 </nav>
 
@@ -232,25 +270,66 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer__inner">
-      <span class="footer__copy">© 2026 The Next Level. All rights reserved.</span>
-      <a href="/" class="footer__back">← Back to main site</a>
+<footer class="sc-foot" role="contentinfo">
+  <div class="sc-foot__wrap">
+    <div class="sc-foot__top">
+      <div class="sc-foot__brand">
+        <div class="sc-foot__brand-name">The <em>Next</em> Level</div>
+        <p>We help UK &amp; Irish soccer players secure college scholarships across the United States.</p>
+      </div>
+      <div>
+        <div class="sc-foot__title">Navigation</div>
+        <ul class="sc-foot__links">
+          <li><a href="/#process">Process</a></li>
+          <li><a href="/#stories">Stories</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#apply">Apply</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="sc-foot__title">Resources</div>
+        <ul class="sc-foot__links">
+          <li><a href="/faq">Scholarship FAQ</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/coach-contacts">Coach Contacts</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="sc-foot__title">Contact</div>
+        <ul class="sc-foot__links">
+          <li><a href="mailto:tnlrecruitment@outlook.com">tnlrecruitment@outlook.com</a></li>
+          <li><a href="https://wa.me/447346804838" target="_blank" rel="noopener">WhatsApp: +44 7346 804838</a></li>
+          <li><a href="https://www.instagram.com/tnlrecruit" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sc-foot__bottom">
+      <span>© 2026 The Next Level. All rights reserved.</span>
+      <span><a href="/privacy-policy">Privacy</a> · <a href="/terms">Terms</a></span>
     </div>
   </div>
 </footer>
+<script>
+(function(){
+  var ham = document.getElementById('scHam');
+  var mob = document.getElementById('scMob');
+  ham.addEventListener('click', function(){
+    var open = mob.classList.toggle('open');
+    ham.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mob.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mob.classList.remove('open');
+      ham.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
 
 <script>
 (function(){
-  var ham = document.getElementById('ham');
-  var mob = document.getElementById('navmob');
-  if (ham) {
-    ham.addEventListener('click', function(){
-      var open = mob.classList.toggle('open');
-      ham.setAttribute('aria-expanded', open);
-    });
-  }
   document.querySelectorAll('.faq__q').forEach(function(btn){
     btn.addEventListener('click', function(){
       var item = btn.parentElement;
