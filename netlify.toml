@@ -1,6 +1,16 @@
+# This Netlify site only hosts the Coach Contacts payment functions (Stripe webhook
+# that emails the PDFs). It is deployed manually with `netlify deploy --prod` from
+# this folder, because the PDFs are not in the (public) GitHub repo. Skip builds
+# triggered by GitHub pushes so they never replace that manual deploy.
+[build]
+  ignore = "exit 0"
+  # Only a redirect page is published; the PDFs are bundled into the function, never served
+  publish = "netlify/site"
+
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
+  included_files = ["netlify/functions/pdfs/**"]
 
 [[plugins]]
   package = "@netlify/plugin-functions-install-core"
