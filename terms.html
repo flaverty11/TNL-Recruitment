@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- THEME: light 07:00-19:00 in the visitor's local time, dark otherwise; the sun/moon button overrides and is remembered -->
+<!-- THEME: dark by default; the sun/moon button switches to light and the choice is remembered -->
 <script>
 (function(){
   var KEY = 'tnl-theme', root = document.documentElement;
   var saved = null;
   try { saved = localStorage.getItem(KEY); } catch (e) {}
-  var hour = new Date().getHours();
-  var theme = (saved === 'light' || saved === 'dark') ? saved : (hour >= 7 && hour < 19 ? 'light' : 'dark');
+  var theme = (saved === 'light' || saved === 'dark') ? saved : 'dark';
   root.setAttribute('data-theme', theme);
   function label(){
     var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
