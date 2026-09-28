@@ -5,10 +5,9 @@ const PRODUCTS = {
   'NCAA Division I':      { name: 'NCAA Division I Coach Contacts',      pence: 9900 },
   'NCAA Division II':     { name: 'NCAA Division II Coach Contacts',     pence: 7900 },
   'NCAA Division III':    { name: 'NCAA Division III Coach Contacts',    pence: 4900 },
-  'NAIA Division I':      { name: 'NAIA Division I Coach Contacts',      pence: 7900 },
-  'NAIA Division II':     { name: 'NAIA Division II Coach Contacts',     pence: 5900 },
+  'NAIA Division I':      { name: 'NAIA Coach Contacts',                  pence: 7900 }, // NAIA has one soccer division
   'NJCAA Junior College': { name: 'NJCAA Junior College Coach Contacts', pence: 4900 },
-  'Complete Bundle':      { name: 'Complete Bundle — All Divisions',     pence: 29900 },
+  'Complete Bundle':      { name: 'Complete Bundle — All Lists',         pence: 29900 },
 };
 
 module.exports = async function handler(req, res) {
