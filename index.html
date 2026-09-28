@@ -17,11 +17,15 @@
 <meta property="og:title" content="The Next Level — Soccer Scholarships in the USA">
 <meta property="og:description" content="We help UK & Irish soccer players earn scholarships to US colleges. Expert recruitment, coach outreach, and full support from application to signing day.">
 <meta property="og:site_name" content="The Next Level">
+<meta property="og:image" content="https://www.tnlrecruitment.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Next Level — Soccer Scholarships in the USA">
 <meta name="twitter:description" content="We help UK & Irish soccer players earn scholarships to US colleges. Expert recruitment, coach outreach, and full support.">
+<meta name="twitter:image" content="https://www.tnlrecruitment.com/images/og-image.jpg">
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -35,7 +39,7 @@
   "areaServed": ["United Kingdom", "Ireland"],
   "audience": {
     "@type": "Audience",
-    "audienceType": "Soccer players aged 16–22 seeking US college scholarships"
+    "audienceType": "Soccer players aged 13–22 seeking US college scholarships"
   },
   "offers": {
     "@type": "Offer",
@@ -719,6 +723,14 @@ body{
 @keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 @keyframes spin{to{transform:rotate(360deg)}}
 </style>
+<style>
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:150;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(0,0,0,0.45);transition:transform .2s ease}
+.wa-float:hover{transform:scale(1.06)}
+@media(max-width:480px){.wa-float{right:16px;bottom:16px;width:52px;height:52px}}
+@media print{.wa-float{display:none}}
+</style>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
@@ -740,6 +752,7 @@ body{
       <li><a href="#stories">Stories</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="#apply" class="btn btn--white" style="padding:9px 18px;font-size:13px">Apply Now</a></li>
     </ul>
     <button class="nav__ham" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="navmob">
@@ -752,6 +765,7 @@ body{
     <a href="#stories" role="menuitem">Stories</a>
     <a href="#pricing" role="menuitem">Pricing</a>
     <a href="faq.html" role="menuitem">FAQ</a>
+    <a href="blog.html" role="menuitem">Blog</a>
     <a href="#apply" class="btn btn--white" role="menuitem">Apply Now</a>
   </div>
 </nav>
@@ -1090,7 +1104,7 @@ body{
       <div class="reveal reveal-delay-1">
         <div class="form-card">
           <div class="form-title">Start Your Application</div>
-          <div class="form-sub">Takes under 3 minutes · No obligation</div>
+          <div class="form-sub">Takes about 2 minutes · No obligation</div>
 
           <form id="applyForm" novalidate>
             <div class="frow">
@@ -1144,9 +1158,43 @@ body{
             <option>Nigeria</option><option>Other</option>
           </select>
             </div>
+            <div class="frow">
+              <div class="fgroup">
+                <label class="flabel" for="club">Current Club <span aria-hidden="true">*</span></label>
+                <input class="finput" type="text" id="club" autocomplete="off" placeholder="e.g. Shelbourne U19" required>
+              </div>
+              <div class="fgroup">
+                <label class="flabel" for="level">Level <span aria-hidden="true">*</span></label>
+                <select class="fselect" id="level" required>
+                  <option value="" disabled selected>Select</option>
+                  <option>Pro academy</option>
+                  <option>Semi-pro / non-league senior</option>
+                  <option>National or regional youth league</option>
+                  <option>School or college team</option>
+                  <option>Grassroots / Sunday league</option>
+                </select>
+              </div>
+            </div>
+            <div class="frow">
+              <div class="fgroup">
+                <label class="flabel" for="start">Planned Start <span aria-hidden="true">*</span></label>
+                <select class="fselect" id="start" required>
+                  <option value="" disabled selected>Select</option>
+                  <option>Fall 2027</option>
+                  <option>Spring 2028</option>
+                  <option>Fall 2028</option>
+                  <option>Fall 2029 or later</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="fgroup">
+                <label class="flabel" for="video">Highlight Video Link</label>
+                <input class="finput" type="url" id="video" inputmode="url" placeholder="YouTube, Hudl, Veo…">
+              </div>
+            </div>
             <div class="fgroup">
-              <label class="flabel" for="msg">Tell us about yourself</label>
-              <textarea class="ftextarea" id="msg" placeholder="Your current club, level of play, academic standing, and your scholarship goal..."></textarea>
+              <label class="flabel" for="msg">Anything else we should know?</label>
+              <textarea class="ftextarea" id="msg" placeholder="Grades, height, achievements, the kind of university you're after..."></textarea>
             </div>
             <button type="submit" class="fsubmit">Request Free Evaluation →</button>
             <div class="fnote" role="status" aria-live="polite">We never sell or share your information.</div>
@@ -1178,6 +1226,7 @@ body{
         <div class="footer__col-title">Resources</div>
         <ul class="footer__links">
           <li><a href="faq.html">Scholarship FAQ</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
       <div>
@@ -1283,6 +1332,10 @@ body{
       age: document.getElementById('age').value,
       position: document.getElementById('pos').value,
       country: document.getElementById('country').value,
+      club: document.getElementById('club').value.trim(),
+      level: document.getElementById('level').value,
+      startTerm: document.getElementById('start').value,
+      video: document.getElementById('video').value.trim(),
       message: document.getElementById('msg').value.trim()
     };
 
@@ -1313,5 +1366,8 @@ body{
 })();
 </script>
 <script>window.addEventListener('pageshow',function(e){if(e.persisted)window.location.reload();});</script>
+<a class="wa-float" href="https://wa.me/447346804838?text=Hi%20TNL%2C%20I%27d%20like%20to%20find%20out%20more%20about%20US%20soccer%20scholarships." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 </body>
 </html>

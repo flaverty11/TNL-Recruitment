@@ -8,7 +8,7 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { firstName, lastName, email, phone, age, position, country, message } = req.body;
+    const { firstName, lastName, email, phone, age, position, country, club, level, startTerm, video, message } = req.body;
 
     await resend.emails.send({
       from: 'TNL Website <noreply@tnlrecruitment.com>',
@@ -24,6 +24,10 @@ Phone: ${phone || '(not provided)'}
 Age: ${age}
 Position: ${position}
 Country: ${country}
+Club: ${club || '(not provided)'}
+Level: ${level || '(not provided)'}
+Planned start: ${startTerm || '(not provided)'}
+Highlight video: ${video || '(not provided)'}
 
 Message:
 ${message || '(none provided)'}
