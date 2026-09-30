@@ -636,8 +636,10 @@ body{
 .hfaq__item summary::after{content:'+';position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:300;color:var(--gold);transition:transform .2s}
 .hfaq__item[open] summary::after{transform:translateY(-50%) rotate(45deg)}
 .hfaq__item p{padding:0 0 22px;font-size:14px;line-height:1.75;color:var(--text-2);max-width:620px}
-.hfaq__map{margin-top:44px;width:100%;max-width:440px;aspect-ratio:975/610;background:var(--white);opacity:.3;-webkit-mask:url(/images/usa-map.svg) center/contain no-repeat;mask:url(/images/usa-map.svg) center/contain no-repeat}
-@media(max-width:900px){.hfaq__inner{grid-template-columns:1fr;gap:28px}.hfaq__map{margin-top:28px;max-width:340px}}
+/* Faint US map sitting behind the whole section; follows the light/dark theme */
+.hfaq{position:relative;overflow:hidden;isolation:isolate}
+.hfaq::before{content:'';position:absolute;z-index:-1;left:50%;top:50%;width:min(1200px,110%);aspect-ratio:975/610;transform:translate(-50%,-50%);background:var(--white);opacity:.12;-webkit-mask:url(/images/usa-map.svg) center/contain no-repeat;mask:url(/images/usa-map.svg) center/contain no-repeat;pointer-events:none}
+@media(max-width:900px){.hfaq__inner{grid-template-columns:1fr;gap:28px}.hfaq::before{width:180%;opacity:.1}}
 
 .pricing__header{
   display:grid;grid-template-columns:1fr 1fr;gap:80px;
@@ -1065,7 +1067,6 @@ body{
       <h2 class="hfaq__h" id="hfaq-h">Things parents<br>always <em>ask.</em></h2>
       <a href="/faq" class="hfaq__all">See all questions →</a><br>
       <a href="/blog" class="hfaq__all" style="display:inline-block;margin-top:10px">Read our free guides →</a>
-      <div class="hfaq__map" role="img" aria-label="Map of the United States"></div>
     </div>
     <div class="hfaq__list reveal reveal-delay-1">
       <details class="hfaq__item">
