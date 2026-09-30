@@ -198,6 +198,13 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 .pcard-p li::before{content:'';position:absolute;left:0;top:9px;width:10px;height:1px;background:var(--gold)}
 .pcard-p__btn{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--bg);font-weight:600;font-size:14px;padding:12px 22px;border-radius:8px;text-decoration:none;transition:opacity .2s}
 .pcard-p__btn:hover{opacity:.85}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:4px 0 26px}
+.perk{border:1px solid var(--border);background:var(--bg-2);border-radius:12px;padding:20px}
+.perk__label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.perk__title{font-family:'DM Serif Display',serif;font-size:22px;line-height:1.2;color:var(--text);margin-bottom:8px}
+.perk p{font-size:14px;color:var(--text-2);line-height:1.65;margin:0}
+.perk__code{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:18px;font-weight:700;letter-spacing:0.12em;color:var(--text);border:1px dashed var(--gold);border-radius:8px;padding:6px 14px;margin-bottom:10px}
+@media(max-width:640px){.perks{grid-template-columns:1fr}}
 .partners__join{margin-top:40px;border:1px dashed var(--border-hover);border-radius:16px;padding:32px 36px}
 .partners__join h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:24px;margin-bottom:8px}
 .partners__join p{color:var(--text-2);font-size:14px;line-height:1.7;margin:0}
@@ -288,7 +295,7 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
   <div class="container">
     <span class="eyebrow">Partners</span>
     <h1>Our <em>partners.</em></h1>
-    <p>The brands we work with to help our athletes turn up prepared, on and off the pitch.</p>
+    <p>The brands we work with to help our athletes turn up prepared, on and off the pitch. Signing up with us gets you a free Athletes 5in1 pack.</p>
   </div>
 </section>
 
@@ -307,6 +314,18 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
           <li>Individual essentials, whenever you need them</li>
           <li>App coming soon, with routines, checklists and smart recommendations</li>
         </ul>
+        <div class="perks">
+          <div class="perk">
+            <div class="perk__label">TNL clients</div>
+            <div class="perk__title">Free Athletes 5in1 pack</div>
+            <p>Every athlete who signs up with The Next Level gets a free package from Athletes 5in1.</p>
+          </div>
+          <div class="perk">
+            <div class="perk__label">Discount code</div>
+            <div class="perk__code">TNL15</div>
+            <p>Use code TNL15 at checkout on athletes5in1.com for a discount.</p>
+          </div>
+        </div>
         <a href="https://athletes5in1.com/" class="pcard-p__btn" target="_blank" rel="noopener">Visit Athletes 5in1 <span aria-hidden="true">→</span></a>
       </div>
     </article>
