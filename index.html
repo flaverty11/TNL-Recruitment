@@ -638,8 +638,8 @@ body{
 .hfaq__item p{padding:0 0 22px;font-size:14px;line-height:1.75;color:var(--text-2);max-width:620px}
 /* Faint US map sitting behind the whole section; follows the light/dark theme */
 .hfaq{position:relative;overflow:hidden;isolation:isolate}
-.hfaq::before{content:'';position:absolute;z-index:-1;left:50%;top:50%;width:min(1200px,110%);aspect-ratio:975/610;transform:translate(-50%,-50%);background:var(--white);opacity:.12;-webkit-mask:url(/images/usa-map.svg) center/contain no-repeat;mask:url(/images/usa-map.svg) center/contain no-repeat;pointer-events:none}
-@media(max-width:900px){.hfaq__inner{grid-template-columns:1fr;gap:28px}.hfaq::before{width:180%;opacity:.1}}
+.hfaq::before{content:'';position:absolute;z-index:-1;left:50%;top:50%;height:105%;width:auto;max-width:130%;aspect-ratio:975/610;transform:translate(-50%,-50%);background:var(--white);opacity:.12;-webkit-mask:url(/images/usa-map.svg) center/contain no-repeat;mask:url(/images/usa-map.svg) center/contain no-repeat;pointer-events:none}
+@media(max-width:900px){.hfaq__inner{grid-template-columns:1fr;gap:28px}.hfaq::before{height:auto;width:180%;max-width:none;opacity:.1}}
 
 .pricing__header{
   display:grid;grid-template-columns:1fr 1fr;gap:80px;
