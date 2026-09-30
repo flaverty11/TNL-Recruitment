@@ -187,6 +187,7 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 /* ── PARTNERS ── */
 .partners{padding:64px 0 120px}
 .pcard-p{border:1px solid var(--border);background:var(--bg-1);border-radius:16px;padding:36px;display:grid;grid-template-columns:120px 1fr;gap:32px;align-items:start}
+.pcard-p__logo{width:120px;height:120px;border-radius:50%;display:block;box-shadow:0 0 0 1px var(--border-hover)}
 .pcard-p__mark{width:120px;height:120px;border-radius:16px;background:var(--bg-2);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1}
 .pcard-p__mark b{font-family:'DM Serif Display',serif;font-size:40px;font-weight:400;color:var(--gold)}
 .pcard-p__mark span{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-2);margin-top:8px}
@@ -198,6 +199,8 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 .pcard-p li::before{content:'';position:absolute;left:0;top:9px;width:10px;height:1px;background:var(--gold)}
 .pcard-p__btn{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--bg);font-weight:600;font-size:14px;padding:12px 22px;border-radius:8px;text-decoration:none;transition:opacity .2s}
 .pcard-p__btn:hover{opacity:.85}
+.pcard-p__ig{display:inline-block;margin-left:18px;font-size:14px;color:var(--gold);text-underline-offset:3px}
+@media(max-width:640px){.pcard-p__ig{display:block;margin:16px 0 0}}
 .perks{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:4px 0 26px}
 .perk{border:1px solid var(--border);background:var(--bg-2);border-radius:12px;padding:20px}
 .perk__label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -209,7 +212,7 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 .partners__join h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:24px;margin-bottom:8px}
 .partners__join p{color:var(--text-2);font-size:14px;line-height:1.7;margin:0}
 .partners__join a{color:var(--gold)}
-@media(max-width:640px){.pcard-p{grid-template-columns:1fr;padding:28px 22px;gap:22px}.pcard-p__mark{width:88px;height:88px}.pcard-p__mark b{font-size:30px}.partners__join{padding:26px 22px}}
+@media(max-width:640px){.pcard-p{grid-template-columns:1fr;padding:28px 22px;gap:22px}.pcard-p__logo{width:88px;height:88px}.pcard-p__mark{width:88px;height:88px}.pcard-p__mark b{font-size:30px}.partners__join{padding:26px 22px}}
 </style>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -303,7 +306,7 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
   <div class="container">
 
     <article class="pcard-p">
-      <div class="pcard-p__mark" aria-hidden="true"><b>5in1</b><span>Athletes</span></div>
+      <img src="/images/partner-a5n1.webp" alt="Athletes 5in1 (A5N1) logo" width="120" height="120" class="pcard-p__logo">
       <div>
         <div class="pcard-p__tag">Partner</div>
         <h2>Athletes 5in1</h2>
@@ -327,6 +330,7 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
           </div>
         </div>
         <a href="https://athletes5in1.com/" class="pcard-p__btn" target="_blank" rel="noopener">Visit Athletes 5in1 <span aria-hidden="true">→</span></a>
+        <a href="https://www.instagram.com/athletes5in1/" class="pcard-p__ig" target="_blank" rel="noopener">@athletes5in1 on Instagram</a>
       </div>
     </article>
 
