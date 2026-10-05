@@ -10,3 +10,5 @@ node_modules/
 
 # Paid product files: never commit these, the repo is public
 *.pdf
+# The free parent guide is public on purpose
+!downloads/tnl-parent-guide.pdf
