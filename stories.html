@@ -265,6 +265,15 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
   .testimonials__featured{grid-template-columns:1fr}
 }
 
+/* ── VIDEO TESTIMONIAL ── */
+.vtest{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:48px;align-items:center;margin-bottom:56px;padding:32px;border:1px solid var(--border);border-radius:var(--radius-xl);background:var(--bg-1)}
+.vtest__video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;background:#000;display:block}
+.vtest__eyebrow{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.vtest__name{font-family:'DM Serif Display',serif;font-size:clamp(30px,4vw,42px);font-weight:400;line-height:1.1;margin-bottom:8px}
+.vtest__school{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-2);margin-bottom:20px}
+.vtest__text{color:var(--text-2);font-size:15px;line-height:1.65;max-width:440px;margin:0}
+@media(max-width:760px){.vtest{grid-template-columns:1fr;gap:24px;padding:20px}.vtest__video{max-width:360px;margin:0 auto}}
+
 .stories__cta{margin-top:40px;border:1px solid rgba(201,168,76,0.3);border-radius:16px;padding:32px 36px;background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(201,168,76,0.02));display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .stories__cta h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:26px;line-height:1.2;margin-bottom:6px}
 .stories__cta h2 em{font-style:italic;color:var(--gold)}
@@ -363,6 +372,19 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 
 <section class="stories">
   <div class="container">
+    <div class="vtest">
+      <video class="vtest__video" controls playsinline preload="metadata" poster="/images/daniel-doherty-poster.jpg">
+        <source src="/images/daniel-doherty.mp4" type="video/mp4">
+        Your browser can't play this video.
+      </video>
+      <div>
+        <div class="vtest__eyebrow">Video testimonial</div>
+        <div class="vtest__name">Daniel Doherty</div>
+        <div class="vtest__school">Melbourne University · Australia</div>
+        <p class="vtest__text">Daniel plays for the Melbourne University soccer team in Australia. Hear about his experience with The Next Level in his own words.</p>
+      </div>
+    </div>
+
     <div class="testimonials__grid">
       <div class="pcard-athlete always-dark">
         <img class="pcard-athlete__img" loading="lazy" decoding="async" src="/images/img-6.webp" alt="Liam Murphy — Northeastern University NCAA D1 athlete">
