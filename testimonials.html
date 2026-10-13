@@ -270,7 +270,7 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 }
 
 /* ── VIDEO TESTIMONIAL ── */
-.vtest{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:48px;align-items:center;margin-bottom:56px;padding:32px;border:1px solid var(--border);border-radius:var(--radius-xl);background:var(--bg-1)}
+.vtest{margin-top:56px;display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:48px;align-items:center;margin-bottom:56px;padding:32px;border:1px solid var(--border);border-radius:var(--radius-xl);background:var(--bg-1)}
 .vtest__video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;background:#000;display:block}
 .vtest__eyebrow{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .vtest__name{font-family:'DM Serif Display',serif;font-size:clamp(30px,4vw,42px);font-weight:400;line-height:1.1;margin-bottom:8px}
@@ -381,29 +381,6 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 
 <section class="stories">
   <div class="container">
-    <div class="vtest">
-      <video class="vtest__video" controls playsinline preload="metadata" poster="/images/daniel-doherty-poster.jpg">
-        <source src="/images/daniel-doherty.mp4" type="video/mp4">
-        Your browser can't play this video.
-      </video>
-      <div>
-        <div class="vtest__eyebrow">Video testimonial</div>
-        <div class="vtest__name">Daniel Doherty</div>
-        <div class="vtest__school">Melbourne University · Australia</div>
-        <p class="vtest__text">Daniel plays for the Melbourne University soccer team in Australia. Hear about his experience with The Next Level in his own words.</p>
-      </div>
-    </div>
-
-    <div class="proof">
-      <img class="proof__img" loading="lazy" decoding="async" src="/images/charlie-taylor-scholarship.jpg?v=2" width="892" height="683" alt="North Central College scholarship award certificate for Charlie Taylor: International Dean Scholarship">
-      <div>
-        <div class="vtest__eyebrow">Scholarship award</div>
-        <div class="vtest__name">Charlie Taylor</div>
-        <div class="vtest__school">North Central College · NCAA</div>
-        <p class="vtest__text">Charlie earned the International Dean Scholarship at North Central College in Illinois, awarded in recognition of outstanding academic accomplishments.</p>
-      </div>
-    </div>
-
     <div class="testimonials__grid">
       <div class="pcard-athlete always-dark">
         <img class="pcard-athlete__img" loading="lazy" decoding="async" src="/images/img-6.webp" alt="Liam Murphy — Northeastern University NCAA D1 athlete">
@@ -427,6 +404,29 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 
       <div class="pcard-athlete pcard-athlete--post">
         <img class="pcard-athlete__img" loading="lazy" decoding="async" src="/images/charlie-taylor-commitment.webp" alt="Official commitment: Charlie Taylor, midfielder, age 18, committed to North Central College (NCAA)">
+      </div>
+    </div>
+
+    <div class="vtest">
+      <video class="vtest__video" controls playsinline preload="metadata" poster="/images/daniel-doherty-poster.jpg">
+        <source src="/images/daniel-doherty.mp4" type="video/mp4">
+        Your browser can't play this video.
+      </video>
+      <div>
+        <div class="vtest__eyebrow">Video testimonial</div>
+        <div class="vtest__name">Daniel Doherty</div>
+        <div class="vtest__school">Melbourne University · Australia</div>
+        <p class="vtest__text">Daniel plays for the Melbourne University soccer team in Australia. Hear about his experience with The Next Level in his own words.</p>
+      </div>
+    </div>
+
+    <div class="proof">
+      <img class="proof__img" loading="lazy" decoding="async" src="/images/charlie-taylor-scholarship.jpg?v=2" width="892" height="683" alt="North Central College scholarship award certificate for Charlie Taylor: International Dean Scholarship">
+      <div>
+        <div class="vtest__eyebrow">Scholarship award</div>
+        <div class="vtest__name">Charlie Taylor</div>
+        <div class="vtest__school">North Central College · NCAA</div>
+        <p class="vtest__text">Charlie earned the International Dean Scholarship at North Central College in Illinois, awarded in recognition of outstanding academic accomplishments.</p>
       </div>
     </div>
 
