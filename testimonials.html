@@ -240,6 +240,9 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
   font-size:13.5px;line-height:1.65;color:rgba(255,255,255,0.82);
 }
 
+.pcard-athlete--post{background:#fff;aspect-ratio:3/4}
+.pcard-athlete--post .pcard-athlete__img{object-fit:contain;object-position:center}
+
 .testimonials__featured{
   display:grid;grid-template-columns:1fr 1fr;gap:1px;
   background:var(--border);border-radius:var(--radius-xl);
@@ -262,6 +265,7 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 @media(max-width:900px){
   .testimonials__grid{grid-template-columns:1fr}
   .pcard-athlete{aspect-ratio:4/3}
+  .pcard-athlete--post{aspect-ratio:4/5}
   .testimonials__featured{grid-template-columns:1fr}
 }
 
@@ -421,14 +425,8 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
         </div>
       </div>
 
-      <div class="pcard-athlete always-dark">
-        <img class="pcard-athlete__img" loading="lazy" decoding="async" src="/images/img-8.webp" alt="Charlie Taylor — West Liberty University NCAA D2 athlete">
-        <div class="pcard-athlete__overlay" aria-hidden="true"></div>
-        <div class="pcard-athlete__body">
-          <div class="pcard-athlete__name">Charlie Taylor</div>
-          <div class="pcard-athlete__school">West Liberty University · NCAA D2</div>
-          <blockquote class="pcard-athlete__quote">"I started the process in January 2024 and received 4 offers by March. The whole process went smoothly — big thanks to The Next Level for sorting me out."</blockquote>
-        </div>
+      <div class="pcard-athlete pcard-athlete--post">
+        <img class="pcard-athlete__img" loading="lazy" decoding="async" src="/images/charlie-taylor-commitment.webp" alt="Official commitment: Charlie Taylor, midfielder, age 18, committed to North Central College (NCAA)">
       </div>
     </div>
 
