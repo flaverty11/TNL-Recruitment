@@ -271,10 +271,10 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
 
 /* ── VIDEO TESTIMONIAL ── */
 .vtest{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:48px;align-items:center;margin-bottom:56px;padding:32px;border:1px solid var(--border);border-radius:var(--radius-xl);background:var(--bg-1)}
-.vpair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:56px}
-.vpair .vtest{grid-template-columns:minmax(0,210px) 1fr;gap:28px;padding:24px;margin-bottom:0}
-.vpair .vtest__name{font-size:clamp(26px,3vw,34px)}
-@media(max-width:900px){.vpair{grid-template-columns:1fr}}
+.vpair{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:56px}
+.vpair .vtest{grid-template-columns:1fr;align-content:start;gap:22px;padding:20px;margin-bottom:0}
+.vpair .vtest__name{font-size:clamp(26px,2.6vw,32px)}
+@media(max-width:900px){.vpair{grid-template-columns:1fr}.vpair .vtest{grid-template-columns:minmax(0,210px) 1fr;gap:28px;padding:24px;align-items:center}}
 @media(max-width:760px){.vpair .vtest{grid-template-columns:1fr;gap:24px;padding:20px}}
 .vtest__video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;background:#000;display:block}
 .vtest__eyebrow{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
@@ -410,6 +410,19 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--t
           <div class="vtest__name">Daniel Doherty</div>
           <div class="vtest__school">Melbourne University · Australia</div>
           <p class="vtest__text">Daniel plays for the Melbourne University soccer team in Australia. Hear about his experience with The Next Level in his own words.</p>
+        </div>
+      </div>
+
+      <div class="vtest">
+        <video class="vtest__video" controls playsinline preload="metadata" poster="/images/reece-dang-poster.jpg">
+          <source src="/images/reece-dang.mp4" type="video/mp4">
+          Your browser can't play this video.
+        </video>
+        <div>
+          <div class="vtest__eyebrow">Video testimonial</div>
+          <div class="vtest__name">Reece Dang</div>
+          <div class="vtest__school">McNeese State University · NCAA</div>
+          <p class="vtest__text">Reece is out in Louisiana at McNeese State University. Hear about his experience with The Next Level in his own words.</p>
         </div>
       </div>
     </div>
