@@ -395,6 +395,13 @@ body{
   .hero__bottom{flex-direction:column;align-items:flex-start}
 }
 
+/* ── DESTINATIONS ─────────────────────────── */
+.dest{padding:26px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.dest__inner{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 32px;text-align:center}
+.dest__label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)}
+.dest__list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px}
+.dest__list li{font-family:'DM Serif Display',serif;font-size:19px;color:var(--text-2)}
+
 /* ── MARQUEE ──────────────────────────────── */
 .marquee{padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
 .marquee__track{
@@ -449,6 +456,16 @@ body{
 @media(max-width:480px){
   .stats__item{padding:32px 24px}
 }
+
+/* ── VIDEO TESTIMONIALS ───────────────────── */
+.hvid{padding:0 0 96px}
+.hvid__head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:40px}
+.hvid__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.hvid__card{padding:20px;border:1px solid var(--border);border-radius:var(--radius-xl);background:var(--bg-1)}
+.hvid__video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;background:#000;display:block;margin-bottom:20px}
+.hvid__name{font-family:'DM Serif Display',serif;font-size:clamp(24px,2.4vw,30px);font-weight:400;line-height:1.1;margin-bottom:6px;color:var(--white)}
+.hvid__school{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-2)}
+@media(max-width:900px){.hvid__grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
 
 /* ── PROCESS SECTION ──────────────────────── */
 .process{padding:0 0 72px}
@@ -786,6 +803,7 @@ body{
   color:var(--text-2);margin-bottom:7px;letter-spacing:0.02em;
 }
 .flabel span{color:var(--green)}
+.flabel .flabel__opt{color:var(--text-3);font-weight:400}
 
 .finput,.fselect,.ftextarea{
   width:100%;padding:12px 16px;
@@ -975,27 +993,15 @@ body{
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee" id="stats" aria-label="Where our athletes have gone">
-  <div class="marquee__track">
-    <span class="marquee__item"><img src="images/colleges/georgetown.png" width="24" height="24" alt="Georgetown">Georgetown</span>
-    <span class="marquee__item"><img src="images/colleges/penn-state.png" width="24" height="24" alt="Penn State">Penn State</span>
-    <span class="marquee__item"><img src="images/colleges/ucla.png" width="24" height="24" alt="UCLA">UCLA</span>
-    <span class="marquee__item"><img src="images/colleges/duke.png" width="24" height="24" alt="Duke">Duke</span>
-    <span class="marquee__item"><img src="images/colleges/syracuse.png" width="24" height="24" alt="Syracuse">Syracuse</span>
-    <span class="marquee__item"><img src="images/colleges/indiana.png" width="24" height="24" alt="Indiana">Indiana</span>
-    <span class="marquee__item"><img src="images/colleges/uconn.png" width="24" height="24" alt="UConn">UConn</span>
-    <span class="marquee__item"><img src="images/colleges/creighton.png" width="24" height="24" alt="Creighton">Creighton</span>
-    <span class="marquee__item"><img src="images/colleges/wake-forest.png" width="24" height="24" alt="Wake Forest">Wake Forest</span>
-    <span class="marquee__item"><img src="images/colleges/georgetown.png" width="24" height="24" alt="Georgetown">Georgetown</span>
-    <span class="marquee__item"><img src="images/colleges/penn-state.png" width="24" height="24" alt="Penn State">Penn State</span>
-    <span class="marquee__item"><img src="images/colleges/ucla.png" width="24" height="24" alt="UCLA">UCLA</span>
-    <span class="marquee__item"><img src="images/colleges/duke.png" width="24" height="24" alt="Duke">Duke</span>
-    <span class="marquee__item"><img src="images/colleges/syracuse.png" width="24" height="24" alt="Syracuse">Syracuse</span>
-    <span class="marquee__item"><img src="images/colleges/indiana.png" width="24" height="24" alt="Indiana">Indiana</span>
-    <span class="marquee__item"><img src="images/colleges/uconn.png" width="24" height="24" alt="UConn">UConn</span>
-    <span class="marquee__item"><img src="images/colleges/creighton.png" width="24" height="24" alt="Creighton">Creighton</span>
-    <span class="marquee__item"><img src="images/colleges/wake-forest.png" width="24" height="24" alt="Wake Forest">Wake Forest</span>
+<!-- DESTINATIONS -->
+<div class="dest" id="stats" aria-label="Where our athletes have gone">
+  <div class="container dest__inner">
+    <span class="dest__label">Where our athletes have gone</span>
+    <ul class="dest__list">
+      <li>McNeese State University</li>
+      <li>North Central College</li>
+      <li>Melbourne University</li>
+    </ul>
   </div>
 </div>
 
@@ -1018,6 +1024,45 @@ body{
       <div class="stats__item reveal reveal-delay-3" data-target="12">
         <div class="stats__num">$<span class="snum">0</span><span class="stats__num-accent">M+</span></div>
         <div class="stats__label">Scholarships secured</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO TESTIMONIALS -->
+<section class="hvid" aria-labelledby="hvid-h">
+  <div class="container">
+    <div class="hvid__head reveal">
+      <div>
+        <span class="eyebrow">Testimonials</span>
+        <h2 class="process__h" id="hvid-h">Real athletes,<br>real <em>offers.</em></h2>
+      </div>
+      <a href="/testimonials" class="btn btn--outline">See all testimonials →</a>
+    </div>
+    <div class="hvid__grid reveal">
+      <div class="hvid__card">
+        <video class="hvid__video" controls playsinline preload="none" poster="/images/reece-dang-poster.jpg">
+          <source src="/images/reece-dang.mp4" type="video/mp4">
+          Your browser can't play this video.
+        </video>
+        <div class="hvid__name">Reece Dang</div>
+        <div class="hvid__school">McNeese State University · NCAA</div>
+      </div>
+      <div class="hvid__card">
+        <video class="hvid__video" controls playsinline preload="none" poster="/images/charlie-taylor-poster.jpg">
+          <source src="/images/charlie-taylor.mp4" type="video/mp4">
+          Your browser can't play this video.
+        </video>
+        <div class="hvid__name">Charlie Taylor</div>
+        <div class="hvid__school">North Central College · NCAA</div>
+      </div>
+      <div class="hvid__card">
+        <video class="hvid__video" controls playsinline preload="none" poster="/images/daniel-doherty-poster.jpg">
+          <source src="/images/daniel-doherty.mp4" type="video/mp4">
+          Your browser can't play this video.
+        </video>
+        <div class="hvid__name">Daniel Doherty</div>
+        <div class="hvid__school">Melbourne University · Australia</div>
       </div>
     </div>
   </div>
@@ -1085,7 +1130,7 @@ body{
     <div class="hfaq__list reveal reveal-delay-1">
       <details class="hfaq__item">
         <summary>Is my son or daughter good enough?</summary>
-        <p>We work with athletes aged 14–20 who are playing at club, academy, or school level and are serious about competing in the United States. There's no need to already be "elite": coaches recruit potential as much as current ability, and our free evaluation will tell you honestly where you stand.</p>
+        <p>We work with athletes aged 13 and over who are playing at club, academy, or school level and are serious about competing in the United States. There's no need to already be "elite": coaches recruit potential as much as current ability, and our free evaluation will tell you honestly where you stand.</p>
       </details>
       <details class="hfaq__item">
         <summary>How does the free evaluation work?</summary>
@@ -1179,7 +1224,7 @@ body{
         <h2 class="pricing__h" id="pricing-h">Invest in your<br><em>future.</em></h2>
       </div>
       <div class="reveal reveal-delay-1">
-        <p class="pricing__sub">Transparent pricing, no hidden fees. Every package includes a dedicated advisor. We only accept athletes we believe we can place.</p>
+        <p class="pricing__sub">Transparent pricing, no hidden fees. Every package includes one-to-one support from our team. We only accept athletes we believe we can place.</p>
       </div>
     </div>
 
@@ -1282,7 +1327,7 @@ body{
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
             </div>
             <div>
-              <div class="apply__ti-title">Your own dedicated advisor</div>
+              <div class="apply__ti-title">Personal, one-to-one support</div>
               <div class="apply__ti-body">One person who knows your file inside-out, available 6 days a week.</div>
             </div>
           </div>
@@ -1319,8 +1364,8 @@ body{
               <input class="finput" type="email" id="em" autocomplete="email" placeholder="marcus@example.com" required>
             </div>
             <div class="fgroup">
-              <label class="flabel" for="ph">Phone Number <span aria-hidden="true">*</span></label>
-              <input class="finput" type="tel" id="ph" autocomplete="tel" placeholder="+44 7700 900000" required>
+              <label class="flabel" for="ph">Phone Number <span class="flabel__opt">(optional)</span></label>
+              <input class="finput" type="tel" id="ph" autocomplete="tel" placeholder="+44 7700 900000">
             </div>
             <div class="frow">
               <div class="fgroup">

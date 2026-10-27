@@ -3,8 +3,8 @@ const { Resend } = require('resend');
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const INBOX = 'tnlrecruitment@outlook.com';
-const REQUIRED = ['firstName', 'lastName', 'email', 'phone', 'age', 'position', 'country', 'club', 'level', 'startTerm'];
-const FIELDS = [...REQUIRED, 'video', 'message', 'website'];
+const REQUIRED = ['firstName', 'lastName', 'email', 'age', 'position', 'country', 'club', 'level', 'startTerm'];
+const FIELDS = [...REQUIRED, 'phone', 'video', 'message', 'website'];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function clean(body) {
@@ -47,7 +47,7 @@ New scholarship application from The Next Level website:
 
 Name: ${f.firstName} ${f.lastName}
 Email: ${f.email}
-Phone: ${f.phone}
+Phone: ${f.phone || 'not given'}
 Age: ${f.age}
 Position: ${f.position}
 Country: ${f.country}
